@@ -36,7 +36,6 @@ ActiveRecord::Schema.define(version: 20170818044706) do
     t.integer "zipcode"
     t.integer "owner_id", null: false
     t.integer "cuteness", default: 2
-
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
