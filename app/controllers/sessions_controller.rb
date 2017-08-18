@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+	include SessionsHelper
 	def new
 		@user = User.new
 	end
@@ -9,6 +10,7 @@ class SessionsController < ApplicationController
 			session[:user_id] = @user.id
 			redirect_to user_path(@user)
 		else
+			@user = User.new
 			render 'new'
 		end
 	end
@@ -16,9 +18,9 @@ class SessionsController < ApplicationController
 	def destroy
 		if logged_in?
 			session.delete(:user_id)
-			redirect_to root
+			redirect_to root_path
 		else
-			redirect_to root
+			redirect_to root_path
 		end
 	end
 

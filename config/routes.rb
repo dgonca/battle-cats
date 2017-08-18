@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   	resources :pets
   end
   
-  resources :sessions
+  get "/sessions/new", to: "sessions#new"
+  delete "/sessions", to: "sessions#destroy"
+  post "/sessions", to: "sessions#create"
 
   root to: "sessions#new"
 end
