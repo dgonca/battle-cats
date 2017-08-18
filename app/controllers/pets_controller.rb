@@ -1,6 +1,9 @@
 class PetsController < ApplicationController
 	before_action :set_user, only: [:show, :edit, :update, :destroy]
 
+	def index
+   		@pets = Pet.all
+ 	end
 
 	def show
 	end
@@ -13,11 +16,8 @@ class PetsController < ApplicationController
 		# def pet_params
 		# 	params.require(:pet).permit(:name, :bio, :email, :password)
 		# end
-end
+# end
 
-  def index
-    @pets = Pet.all
-  end
 
 end
 
