@@ -8,16 +8,25 @@ class PetsController < ApplicationController
 	def show
 	end
 
-	private
-		def set_pet
-			@pet = Pet.find(params[:id])
-		end
+  def new
+    @user = User.find_by(id: params[:user_id])
+    @pet = Pet.new
+  end
 
-		# def pet_params
-		# 	params.require(:pet).permit(:name, :bio, :email, :password)
-		# end
-# end
+  def create
+    @user = User.find_by(id: params[:user_id])
+    @pet = @user.pets.build(pet_params)
 
+    if @pet.save
+      redirect_to root_path
+    else
+      render "new"
+    end
+  end
 
+  private
+    def pet_params
+      params.require(:pet).permit(:avatar, :name, :animal_type, :bio, :zipcode)
+    end
 end
 
