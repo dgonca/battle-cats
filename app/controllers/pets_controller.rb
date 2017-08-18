@@ -18,7 +18,7 @@ class PetsController < ApplicationController
     @pet = @user.pets.build(pet_params)
 
     if @pet.save
-      redirect_to root_path
+      redirect_to user_path(@user)
     else
       render "new"
     end

@@ -1,6 +1,7 @@
 <!-- <img src="">  profile pic for pet-->
-
-<h1><%= @pet.name %></h1>
+<div class="show-title text-center">
+	<h1><%= @pet.name %></h1>
+</div>
 
   <% if @pet.errors.any? %>
     <div id="error_explanation">
@@ -14,11 +15,18 @@
     </ul>
   <% end %>
 
-  <div class="pet-show-card" style="width: 50rem;">
-  <img class="pet-show-card-img-top" src=<%=@pet.avatar%>>
-  <div class="pet-show-card-body">
-    <h4 class="pet-show-card-title"><%= @pet.name %></h4>
-    <p class="pet-show-card-bio"><%= @pet.bio %></p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
+  <div class="card text-center">
+	  <div class="pet-show-card" style="width: 50rem;">
+	  <img class="img-circle" src=<%= @pet.avatar.url %>>
+	  <div class="pet-show-card-body">
+	    <h4 class="pet-show-card-title"><%= @pet.name %></h4>
+
+	    <p class="pet-show-card-cuteness"><%= @pet.cuteness %></p>
+	    <p class="pet-show-card-wins"><%= @pet.battles.count %></p>
+
+	    <p class="pet-show-card-bio"><%= @pet.bio %></p>
+
+	    <a href="#" class="btn btn-primary">Go somewhere</a>
+	  </div>
+	</div>
 </div>

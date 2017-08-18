@@ -22,4 +22,9 @@ RSpec.describe PetsController, type: :controller do
     get :index
     expect(response).to render_template("index")
   end
+
 end
+
+
+#To do:
+# additional testing, add cuteness incrementor button to show page and the method for it
