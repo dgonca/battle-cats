@@ -1,4 +1,4 @@
-	 <%= bootstrap_form_for :session, html: {class: "form-signin"} do |f| %>
+	 <%= bootstrap_form_for :session, html: {class: "form-signin"}, url: "/sessions" do |f| %>
 		<h2 class="form-signin-heading">Log Into Battle Cats</h2>
 		<% if @user.errors.any? %>
 		    <div id="error_explanation">
