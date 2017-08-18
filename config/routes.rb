@@ -9,6 +9,6 @@ Rails.application.routes.draw do
   end
 
   get '/sessions/new', to: "sessions#new"
-  post '/sessions' to: "sessions#create"
-  delete '/sessions' to: "sessions#destroy"
+  post '/sessions', to: "sessions#create"
+  delete '/sessions', to: "sessions#destroy"
 end
