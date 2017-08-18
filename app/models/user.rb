@@ -4,4 +4,11 @@ class User < ApplicationRecord
 
 	validates :email, :password, presence: true
 	validates :email, uniqueness: true
+
+
+	def user_name
+		name = self.email[/[^@]+/]
+	end
 end
+
+
