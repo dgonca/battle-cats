@@ -2,7 +2,7 @@ class PetsController < ApplicationController
 	before_action :set_pet, only: [:show, :edit, :update, :destroy]
 
 	def index
-   		@pets = Pet.all
+   	@pets = Pet.all
  	end
 
 	def show
@@ -14,14 +14,13 @@ class PetsController < ApplicationController
   end
 
   def create
-    p "*********"
-    p params
+
     @user = User.find_by(id: params[:user_id])
-    p "#{params[:user_id]}"
+  
     @pet = @user.pets.build(pet_params)
 
     if @pet.save
-      redirect_to root_path
+      redirect_to user_path(@user)
     else
       render "new"
     end
@@ -29,9 +28,11 @@ class PetsController < ApplicationController
 
   private
 
-  	def set_pet
-  		@pet = Pet.find(params[:id])
-  	end
+    def set_pet
+      @pet = Pet.find(params[:id])
+    end
+
+
     def pet_params
       params.require(:pet).permit(:avatar, :name, :animal_type, :bio, :zipcode)
     end

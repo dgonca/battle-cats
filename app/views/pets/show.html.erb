@@ -1,9 +1,38 @@
 <!-- <img src="">  profile pic for pet-->
-
-<div>
-	<%= image_tag(@pet.avatar.url(:thumb)) %>
+<div class="show-title text-center">
 	<h1><%= @pet.name %></h1>
 </div>
+
+
+  <% if @pet.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pet.errors.count, "error") %> prohibited this user from being saved:</h2>
+    </div>
+
+    <ul>
+      <% @pet.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <div class="card text-center">
+	  <div class="pet-show-card" style="width: 50rem;">
+	  <img class="img-circle" src=<%= @pet.avatar.url %>>
+	  <div class="pet-show-card-body">
+	    <h4 class="pet-show-card-title"><%= @pet.name %></h4>
+
+	    <p class="pet-show-card-cuteness"><%= @pet.cuteness %></p>
+	    <p class="pet-show-card-wins"><%= @pet.battles.count %></p>
+
+	    <p class="pet-show-card-bio"><%= @pet.bio %></p>
+
+	    <a href="#" class="btn btn-primary">Go somewhere</a>
+	  </div>
+	</div>
+</div>
+
+
 
 
 
