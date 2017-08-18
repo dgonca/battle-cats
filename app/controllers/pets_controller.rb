@@ -14,7 +14,10 @@ class PetsController < ApplicationController
   end
 
   def create
+    p "*********"
+    p params
     @user = User.find_by(id: params[:user_id])
+    p "#{params[:user_id]}"
     @pet = @user.pets.build(pet_params)
 
     if @pet.save
