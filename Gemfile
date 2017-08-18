@@ -29,8 +29,7 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 gem 'bootstrap_form'
-gem 'simplecov', '~> 0.9', :require => false, :group => :test
-gem 'simplecov-shield'
+gem 'simplecov', '~> 0.8.2', :require => false, :group => :test
 gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
