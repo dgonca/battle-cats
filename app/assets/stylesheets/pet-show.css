@@ -10,6 +10,12 @@
   border: 3px solid black;
 }
 
+.small-circle {
+  width: 90px;
+  height: 90px;
+
+}
+
 .avatar-img {
 	width: auto;
   height: 100%;
