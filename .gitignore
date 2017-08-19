@@ -7,6 +7,10 @@
 # Ignore bundler config.
 /.bundle
 
+*/.DS_Store
+.DS_Store
+.DS_Store?
+
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
@@ -15,6 +19,8 @@
 
 /node_modules
 /yarn-error.log
+
+
 
 .byebug_history
 
