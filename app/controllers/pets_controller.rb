@@ -29,12 +29,16 @@ class PetsController < ApplicationController
   end
 
   def vote
+    p @pet.cuteness
     @pet.update_attributes(cuteness: @pet.cuteness + 1)
     @pet.save
+    p @pet.cuteness
 
-    respond_to do |format|
-      format.html {render 'show'}
-      format.js {render 'vote'}
+    if @pet.save
+      respond_to do |format|
+        format.html {render 'show'}
+        format.js {render 'vote'}
+      end
     end
   end
 
