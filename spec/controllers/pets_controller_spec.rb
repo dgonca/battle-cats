@@ -2,13 +2,15 @@ require "rails_helper"
 require "rack/test"
 
 RSpec.describe PetsController, type: :controller do
-
   home = Dir.home
-  filepath = File.join(home, "/battle-cats/db/cat1.jpg")
-
+    filepath = File.join(Rails.root, "/db/cat1.jpg")
+  
   let!(:user) {User.create!(email: "saham@att.net", password: "test")}
   let!(:pet) {Pet.create(name: "Zee", animal_type: "Zee", bio: "a cute Zee", zipcode: "60192", cuteness: 10, avatar: File.open(filepath))}
+
   before(:each) do
+    home = Dir.home
+    filepath = File.join(Rails.root, "/db/cat1.jpg")
     session[:user_id] = 1
   end
 
