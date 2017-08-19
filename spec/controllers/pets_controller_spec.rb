@@ -80,6 +80,14 @@ RSpec.describe PetsController, type: :controller do
         id: "1")
 
     end
+
+    it "routes /users/:user_id/pets  to create a pet " do
+
+      expect(post("/users/1/pets")).to route_to(controller: "pets",
+        action: "create",
+        user_id: "1")
+
+    end
    end
 
 
