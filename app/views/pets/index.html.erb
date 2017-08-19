@@ -1,1 +1,9 @@
 <h1>pets</h1>
+
+<% if @pets %>
+  <ul>
+    <% @pets.each do |pet| %>
+      <li><%= link_to pet.name, "" %> <%= pet.animal_type %> <%= pet.cuteness %> </li>
+    <% end %>
+  </ul>
+ <% end %>
