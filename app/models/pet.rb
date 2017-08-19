@@ -10,4 +10,9 @@ class Pet < ApplicationRecord
 	belongs_to :owner, class_name: "User"
 
 	validates :name, :animal_type, :owner_id, :cuteness, presence: true
+
+	def increase_cuteness
+    cuteness = self.cuteness + 1
+    self.update_attributes(cuteness: cuteness)
+  end
 end
