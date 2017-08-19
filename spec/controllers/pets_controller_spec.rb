@@ -46,6 +46,12 @@ RSpec.describe PetsController, type: :controller do
     end
   end
 
+  describe "Cuteness points" do
+    it "cuteness points increase when the method is called" do
+    expect { pet.increase_cuteness }.to change { pet.cuteness }.by(1)
+    end
+  end
+
    describe "POST #create" do
     context "when valid params are passed" do
       it "responds with status code 302" do

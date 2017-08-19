@@ -28,6 +28,7 @@
       ],
       "/home/matt/battle-cats/app/controllers/pets_controller.rb": [
         1,
+        null,
         1,
         null,
         1,
@@ -35,6 +36,7 @@
         null,
         null,
         1,
+        null,
         null,
         null,
         1,
@@ -157,6 +159,11 @@
         1,
         null,
         1,
+        null,
+        1,
+        1,
+        1,
+        null,
         null
       ],
       "/home/matt/battle-cats/app/models/application_record.rb": [
@@ -181,6 +188,6 @@
         null
       ]
     },
-    "timestamp": 1503151832
+    "timestamp": 1503154882
   }
 }
