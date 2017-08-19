@@ -1,0 +1,31 @@
+<div class="card bg-light border-primary mb-3">
+    <div class="card-header border-primary ">
+      battle.pet_battles.each do |pet_battle|
+        pet_battle.
+
+    </div>
+    <div class="pet-show-card">
+      <div class="top-part-of-card">
+        <div class="circular-landscape">
+            <img class="avatar-img" src=<%= @pet.avatar.url(:medium) %>>
+          </div>
+          <div class="pet-show-card-body">
+            <h3 class="pet-show-card-title"><%= @pet.name %></h3>
+          <div class="stats-div">
+              <p class="show-card-c stats">Cuteness: <%= @pet.cuteness %></p>
+              <p class="show-card-w stats">Wins: <%= @pet.battles.count %></p>
+            </div>
+            <div class="buttons-div">
+              <button class="btn btn-success action-buttons">Vote</button>
+              <button class="btn btn-warning action-buttons">Battle <%= @pet.name %></button>
+            </div>
+        </div>
+      </div>
+
+    <h5 class="bio-header"><%= @pet.name %>'s Bio</h5>
+      <p class="pet-show-card-bio"><%= @pet.bio %></p>
+
+      <a href="/pets" class="btn btn-primary">Back to Map</a>
+    </div>
+  </div>
+</div>
