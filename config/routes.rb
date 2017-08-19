@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   	resources :pets
   end
 
+  resources :battles
+
   get "/sessions/new", to: "sessions#new"
   delete "/sessions", to: "sessions#destroy"
   post "/sessions", to: "sessions#create"
