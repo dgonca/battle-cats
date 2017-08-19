@@ -53,10 +53,10 @@ RSpec.describe PetsController, type: :controller do
         # expect(flash[:notice]).to be_present
       end
 
-      xit "sets a notice that the experiment was successfully created" do
-        post :create,  params:{ experiment: { title: "new new new", proposal_id: proposal.id, username: "sahamak"} }
-        expect(flash[:notice]).to be_present
-      end
+      # xit "sets a notice that the experiment was successfully created" do
+      #   post :create,  params:{ experiment: { title: "new new new", proposal_id: proposal.id, username: "sahamak"} }
+      #   expect(flash[:notice]).to be_present
+      # end
     end
   end
 

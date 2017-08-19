@@ -12,7 +12,7 @@ feature "clicking on the nav bar" do
 
 	scenario "redirects to the registration page when the register link is clicked" do
 		visit('/')
-		click_link('Sign In')
+		click_link('Register')
 		expect(page).to have_current_path new_user_path
 	end
 end
