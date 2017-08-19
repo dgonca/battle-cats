@@ -70,8 +70,32 @@ RSpec.describe PetsController, type: :controller do
         pet_new = assigns(:pet)
         expect(pet_new.persisted?).to be true
       end
+
+
     end
   end
+
+  describe "routes for pets", :type => :routing do
+    home = Dir.home
+    filepath = File.join(home, "/battle-cats/public/cat1.jpg")
+    let!(:pet) {Pet.create(name: "Zee", animal_type: "Zee", bio: "a cute Zee", zipcode: "60192", cuteness: 10, avatar: File.open(filepath))}
+    it "routes /pets to /pets/:id action " do
+
+      expect(get("/pets/1")).to route_to(controller: "pets",
+        action: "show",
+        id: "1")
+
+    end
+
+    it "routes /users/:user_id/pets  to create a pet " do
+
+      expect(post("/users/1/pets")).to route_to(controller: "pets",
+        action: "create",
+        user_id: "1")
+
+    end
+   end
+
 
 end
 
