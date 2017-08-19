@@ -17,4 +17,5 @@ Rails.application.routes.draw do
   root to: "sessions#new"
 
   put "/pets/:id/votes", to: "pets#vote"
+  resources :battles
 end

@@ -19,8 +19,8 @@
 				    </div>
 				    <div class="buttons-div">
 				    	<%= link_to "Vote", "/pets/#{@pet.id}/votes", method: :put, remote: true, class: "btn btn-success action-buttons" %>
-				    	<!-- <button class="btn btn-success action-buttons">Vote</button> -->
-				    	<button class="btn btn-warning action-buttons">Battle <%= @pet.name %></button>
+				    	<%= link_to "Battle #{@pet.name}", {controller: :battles, action: :new, :pet => @pet.id},  class: "btn btn-warning action-buttons"  %>
+
 				    </div>
 				</div>
 			</div>
