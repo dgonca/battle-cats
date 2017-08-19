@@ -27,5 +27,9 @@ class BattlesController < ApplicationController
     else
       render 'new'
     end
+  end
+
+  def update
+  end
 
 end

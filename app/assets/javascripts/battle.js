@@ -7,14 +7,19 @@ var score;
 var clicks = 0;
 var fightButtonListener = function() {
   $("#fight").one("click", function(){
+      var ajaxFunction = function(score) {
+        $.ajax({
+          type: "put",
+          url: '/'
+          // data: score
+        });
+      }
+
       var hideBoo = function() {
         $("#smash").hide();
-        console.log("Smash hide function  " + clicks)
+        console.log("Smash hide function  " + clicks);
         score = clicks;
-        $.ajax({
-          method: "put",
-          url: "/battles"
-        })
+        ajaxFunction(score);
         //send dis to the controller
       }
 
@@ -22,9 +27,7 @@ var fightButtonListener = function() {
       $("#fight").replaceWith("<button id='smash' class='btn'>Hello</p>")
 
       $("#smash").on("click", function(){
-          console.log("hey");
           clicks += 1;
-          console.log("Smash on click function  " + clicks)
           return clicks;
       });
       console.log("final end of function score  " + clicks)
