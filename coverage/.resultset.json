@@ -1,11 +1,11 @@
 {
   "RSpec": {
     "coverage": {
-      "/home/matt/battle-cats/app/helpers/application_helper.rb": [
+      "/Users/apprentice/battle-cats/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/home/matt/battle-cats/app/helpers/sessions_helper.rb": [
+      "/Users/apprentice/battle-cats/app/helpers/sessions_helper.rb": [
         1,
         null,
         1,
@@ -26,7 +26,7 @@
         null,
         null
       ],
-      "/home/matt/battle-cats/app/controllers/pets_controller.rb": [
+      "/Users/apprentice/battle-cats/app/controllers/pets_controller.rb": [
         1,
         null,
         1,
@@ -70,12 +70,12 @@
         null,
         null
       ],
-      "/home/matt/battle-cats/app/controllers/application_controller.rb": [
+      "/Users/apprentice/battle-cats/app/controllers/application_controller.rb": [
         1,
         1,
         null
       ],
-      "/home/matt/battle-cats/app/controllers/sessions_controller.rb": [
+      "/Users/apprentice/battle-cats/app/controllers/sessions_controller.rb": [
         1,
         1,
         1,
@@ -109,7 +109,7 @@
         null,
         null
       ],
-      "/home/matt/battle-cats/app/controllers/users_controller.rb": [
+      "/Users/apprentice/battle-cats/app/controllers/users_controller.rb": [
         1,
         1,
         null,
@@ -146,7 +146,7 @@
         null,
         null
       ],
-      "/home/matt/battle-cats/app/models/pet.rb": [
+      "/Users/apprentice/battle-cats/app/models/pet.rb": [
         1,
         null,
         1,
@@ -166,12 +166,12 @@
         null,
         null
       ],
-      "/home/matt/battle-cats/app/models/application_record.rb": [
+      "/Users/apprentice/battle-cats/app/models/application_record.rb": [
         1,
         1,
         null
       ],
-      "/home/matt/battle-cats/app/models/user.rb": [
+      "/Users/apprentice/battle-cats/app/models/user.rb": [
         1,
         1,
         1,
@@ -188,6 +188,6 @@
         null
       ]
     },
-    "timestamp": 1503154882
+    "timestamp": 1503160228
   }
 }
