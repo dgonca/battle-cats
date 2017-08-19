@@ -13,7 +13,7 @@ var fightButtonListener = function() {
         score = clicks;
         $.ajax({
           method: "put",
-          url: "/pets/battles"
+          url: "/battles"
         })
         //send dis to the controller
       }
