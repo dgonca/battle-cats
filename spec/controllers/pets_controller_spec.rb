@@ -2,11 +2,16 @@ require "rails_helper"
 require "rack/test"
 
 RSpec.describe PetsController, type: :controller do
+
+  home = Dir.home
+  filepath = File.join(home, "/battle-cats/db/cat1.jpg")
+
   let!(:user) {User.create!(email: "saham@att.net", password: "test")}
-  let!(:pet) {Pet.create(name: "Zee", animal_type: "Zee", bio: "a cute Zee", zipcode: "60192", cuteness: 10, avatar: File.open('/Users/apprentice/battle-cats/db/cat1.jpg'))}
+  let!(:pet) {Pet.create(name: "Zee", animal_type: "Zee", bio: "a cute Zee", zipcode: "60192", cuteness: 10, avatar: File.open(filepath))}
   before(:each) do
     session[:user_id] = 1
   end
+
   describe "Get # index" do
     it "has a 200 status code" do
       get :index
@@ -41,21 +46,23 @@ RSpec.describe PetsController, type: :controller do
     end
   end
 
+  describe "Cuteness points" do
+    it "cuteness points increase when the method is called" do
+    expect { pet.increase_cuteness }.to change { pet.cuteness }.by(1)
+    end
+  end
+
    describe "POST #create" do
     context "when valid params are passed" do
       it "responds with status code 302" do
-        p user.id
-        post :create,  params: { "user_id" => user.id, pet: {name: "Zee", animal_type: "Zee", bio: "a cute Zee", zipcode: "60192", cuteness: 10, avatar: Rack::Test::UploadedFile.new('/Users/apprentice/battle-cats/db/cat1.jpg')}}
+        
+        home = Dir.home
+        filepath = File.join(home, "/battle-cats/db/cat1.jpg")
+  
+        post :create,  params: { "user_id" => user.id, pet: {name: "Zee", animal_type: "Zee", bio: "a cute Zee", zipcode: "60192", cuteness: 10, avatar: Rack::Test::UploadedFile.new(filepath)}}
 
         pet_new = assigns(:pet)
         expect(pet_new.persisted?).to be true
-        # expect(assigns(:experiment)).to eq Experiment.last
-        # expect(flash[:notice]).to be_present
-      end
-
-      xit "sets a notice that the experiment was successfully created" do
-        post :create,  params:{ experiment: { title: "new new new", proposal_id: proposal.id, username: "sahamak"} }
-        expect(flash[:notice]).to be_present
       end
     end
   end
