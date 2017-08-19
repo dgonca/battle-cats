@@ -1,9 +1,9 @@
 <h1>pets</h1>
 
 <% if @pets %>
-  <ul>
+  <ul class="list-group">
     <% @pets.each do |pet| %>
-      <li><%= link_to pet.name, "" %> <%= pet.animal_type %> <%= pet.cuteness %> </li>
+      <li class="list-group-item"><%= image_tag pet.avatar.url(:thumb), class: "rounded-circle img-circle"%>  <%= link_to pet.name, "" %> <%= pet.animal_type %> <%= pet.cuteness %> </li>
     <% end %>
   </ul>
  <% end %>
