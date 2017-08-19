@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
+
   resources :pets, only: [:index, :new, :create,:show]
+
   resources :users do
   	resources :pets
   end
@@ -11,4 +13,6 @@ Rails.application.routes.draw do
   post "/sessions", to: "sessions#create"
 
   root to: "sessions#new"
+
+  put "/pets/:id/votes", to: "pets#vote"
 end
