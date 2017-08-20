@@ -18,9 +18,13 @@
 					    <p class="show-card-w stats">Wins: <%= @pet.win_count %></p>
 				    </div>
 				    <div class="buttons-div">
-				    	<%= link_to "Vote", "/pets/#{@pet.id}/votes", method: :put, remote: true, class: "btn btn-success action-buttons show-vote-button" %>
-				    	<%= link_to "Battle #{@pet.name}", {controller: :battles, action: :new, :pet => @pet.id},  class: "btn btn-warning action-buttons show-battle-button"  %>
-
+				    	<% if @pet.owner_id == current_user.id %>
+				    	<%= link_to "Vote", "/pets/#{@pet.id}/votes", method: :put, remote: true, class: "disabled btn btn-success action-buttons" %>
+				    		<%= link_to "Battle #{@pet.name}", {controller: :battles, action: :new, :pet => @pet.id},  class: "disabled btn btn-warning action-buttons" %>
+				    	<% else %>
+				    		<%= link_to "Vote", "/pets/#{@pet.id}/votes", method: :put, remote: true, class: "btn btn-success action-buttons" %>
+				    		<%= link_to "Battle #{@pet.name}", {controller: :battles, action: :new, :pet => @pet.id},  class: " btn btn-warning action-buttons"  %>
+				    	<% end %>
 				    </div>
 				</div>
 			</div>
