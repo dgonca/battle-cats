@@ -14,3 +14,42 @@
   <% end %>
 </ul>
 
+
+<p class="h3">Completed Battles</p>
+<% @user.pets.each do |pet| %>
+  <% pet.battles.each do |battle| %>
+    <% if battle.has_winner? %>
+    <ul class="list-group">
+    <li class="list-group-item"><%= battle.pet_battles[0].pet.name %> vs <%= battle.pet_battles[1].pet.name %>, <%= battle.created_at.strftime("%b %e, %l:%M %p") %>, winner = <strong><%= battle.winner.name %></strong></li>
+    </ul>
+    <% end %>
+  <% end %>
+<% end %>
+
+
+<p class="h3">Incomplete Battles - Click to Join!</p>
+<% @user.pets.each do |pet| %>
+  <% pet.battles.each do |battle| %>
+    <% if battle.pending_battle? && battle.user_not_played == pet %>
+      <ul class="list-group">
+        <li class="list-group-item"><%= link_to "#{battle.pet_battles[0].pet.name} vs #{battle.pet_battles[1].pet.name}", battle_path(battle) %></li>
+      </ul>
+    <% end %>
+  <% end %>
+<% end %>
+
+<p class="h3">Waiting...</p>
+<% @user.pets.each do |pet| %>
+  <% pet.battles.each do |battle| %>
+    <% if battle.pending_battle? && battle.user_not_played != pet %>
+      <ul class="list-group">
+        <li class="list-group-item">
+          <%= battle.pet_battles[0].pet.name %> vs <%= battle.pet_battles[1].pet.name %>, waiting for other player
+        </li>
+      </ul>
+    <% end %>
+  <% end %>
+<% end %>
+
+
+

@@ -6,28 +6,24 @@ class BattlesController < ApplicationController
 
   def new
     @battle = Battle.new
-    p params
     @pet_to_battle = Pet.find(params[:pet])
     @user = User.find(session[:user_id])
     @user_pets = @user.pets.all
-    #current user
-    #second user - which we get from @pet from show
-
   end
 
   def create
-    p "Where am I?"
-    p params
     @battle = Battle.create()
-
     @current_user_battle = PetBattle.create(pet_id: params[:pet], battle: @battle)
     @opponet_battle = PetBattle.create(pet_id: params[:battle][:pet_to_battle], battle: @battle)
+
     # get the opponent pet's owner 
     p @pet = Pet.find(params[:pet])
     p @opponent_pet = Pet.find(params[:battle][:pet_to_battle])
     p @opponent_owner = @opponent_pet.owner
     p @current_user_battle
     p @opponet_battle
+
+
     if @battle.save && @current_user_battle.save && @opponet_battle.save
       # send email to the opponent to get into battle
       p"*****************************"
@@ -51,16 +47,9 @@ class BattlesController < ApplicationController
     else
       @pet_battle_2.update_attributes(button_score: params[:score])
     end
-    p @pet_battle_1
-    p @pet_battle_2
-    # update the pet_battle that belongs to the current_user
-
-    p "Wheee!"
-    p params[:score]
-    p "look up!"
     respond_to do |format|
         format.html {render 'show'}
-        format.js {p data}
+        format.js {data}
     end
   end
 end
