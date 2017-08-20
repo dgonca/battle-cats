@@ -15,7 +15,7 @@
 				    <h3 class="pet-show-card-title"><%= @pet.name %></h3>
 					<div class="stats-div">
 					    <p class="show-card-c stats">Cuteness: <%= @pet.cuteness %></p>
-					    <p class="show-card-w stats">Wins: <%= @pe unt %></p>
+					    <p class="show-card-w stats">Wins: <%= @pet.win_count %></p>
 				    </div>
 				    <div class="buttons-div">
 				    	<%= link_to "Vote", "/pets/#{@pet.id}/votes", method: :put, remote: true, class: "btn btn-success action-buttons show-vote-button" %>
