@@ -3,9 +3,9 @@ require "rails_helper"
 RSpec.describe SessionsController, type: :controller do
   let!(:user) {User.create!(email: "matt@matt.com", password: "mattmatt")}
 
-  before(:each) do
-    session[:user_id] = 1
-  end
+  # before(:each) do
+  #   session[:user_id] = 1
+  # end
 
   it "has a 200 status code when going to new" do
     get :new

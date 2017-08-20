@@ -24,12 +24,7 @@ class Battle < ApplicationRecord
 
   def winner
     if has_winner?
-      p self.pet_battles
-      # pet_battle = self.pet_battles.all.select {|petbattle| petbattle.winner == true}
-      pet_battle = self.pet_battles.select {|petbattle| p pet_battle}
-      p "***********"
-      p pet_battle
-      p "***********"
+      pet_battle = self.pet_battles.all.select {|petbattle| petbattle.winner == true}
       return pet_battle[0].pet
     end
   end
