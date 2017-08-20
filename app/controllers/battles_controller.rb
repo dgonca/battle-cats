@@ -23,14 +23,18 @@ class BattlesController < ApplicationController
     @current_user_battle = PetBattle.create(pet_id: params[:pet], battle: @battle)
     @opponet_battle = PetBattle.create(pet_id: params[:battle][:pet_to_battle], battle: @battle)
     # get the opponent pet's owner 
+    p @pet = Pet.find(params[:pet])
     p @opponent_pet = Pet.find(params[:battle][:pet_to_battle])
     p @opponent_owner = @opponent_pet.owner
     p @current_user_battle
     p @opponet_battle
     if @battle.save && @current_user_battle.save && @opponet_battle.save
       # send email to the opponent to get into battle
+      p"*****************************"
       p "Sending email to opponent"
-      UserBattleEmailMailer.notify_user(@opponent_owner)
+      p @opponent_owner.email
+      UserBattleEmailMailer.join_battle(@opponent_owner,@opponent_pet, @pet).deliver
+      p"******************************"
       redirect_to battle_path(@battle)
     else
       render 'new'

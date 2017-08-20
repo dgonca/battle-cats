@@ -4,8 +4,10 @@ class UserBattleEmailMailer < ApplicationMailer
 		mail(to: @user.email, subject: "Battle")
 	end
 
-	def join_battle(opponent)
+	def join_battle(opponent, opponent_pet, pet)
 		@opponent = opponent
-		mail(to: @opponent.email, subject: You are in a battle)
+		@opponent_pet = opponent_pet
+		@pet = pet
+		mail(to: @opponent.email, subject: "#{@opponent_pet.name} is in a battle")
 	end
 end
