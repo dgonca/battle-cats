@@ -7,20 +7,28 @@
   height: 200px;
   overflow: hidden;
   border-radius: 50%;
-  border: 3px solid black;
+  border: 3px solid lightgray;
 }
 
 .small-circle {
   width: 90px;
   height: 90px;
+  /*border: none;*/
+
 
 }
 
-.avatar-img {
+.avatar-img  {
 	width: auto;
   height: 100%;
-  margin-left: -50px;
+}
 
+
+.big-image {
+  width: auto;
+  height: 100%;
+
+  margin-left: -30px;
 }
 
 .card-header {
@@ -54,6 +62,7 @@
 	border: none;
   width: auto;
 	margin-bottom: 10px;
+  box-shadow: -2px 5px 5px 1px rgba(219,219,219,1);
 }
 
 .top-part-of-card {
@@ -63,6 +72,7 @@
 .bio-header{
 	padding-top: 5px;
 }
+
 
 
 
