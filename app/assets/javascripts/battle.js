@@ -5,21 +5,24 @@ $(document).ready(function(){
 var score;
 var clicks = 0;
 var fightButtonListener = function() {
-  $("#fight").one("click", function(){
-      var $div = $(this).closest("div").attr("class")
+  $("#fight-button").one("click", function(){
+      var $divNum = $(this).closest("div").attr("class")
 
-      var hideBoo = function() {
+      var hideSmashButton = function() {
         $("#smash").hide();
         score = clicks;
 
         $.ajax({
           method: "put",
-          url: "/battles/" + $div,
+          url: "/battles/" + $divNum,
           data: {score: score}
         });
       }
-      setTimeout(hideBoo, 2000);
-      $("#fight").replaceWith("<button id='smash' class='btn'>Hello</button>")
+
+      setTimeout(hideSmashButton, 2000);
+
+      
+      $("#fight-button").replaceWith("<button id='smash' class='btn'>Hello</button>")
 
       $("#smash").on("click", function(){
           clicks += 1;
@@ -27,8 +30,3 @@ var fightButtonListener = function() {
       });
   });
 }
-
-// click fight fight button,
-// remove the fight button
-// start a loop that counts up once per second
-// once it reaches 10
