@@ -33,10 +33,13 @@ class BattlesController < ApplicationController
 
   def update
     p "Wheee!"
+    p "=================================================="
+    p params
     respond_to do |format|
         format.html {render 'show'}
-        format.js {p data}
+        format.js {p "*************" + data}
     end
+    p "=================================================="
   end
 
   def find_bullshit
