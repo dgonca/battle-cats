@@ -31,4 +31,18 @@ pets = Pet.create([
 	{name: "Humphrey", animal_type: "dog", zipcode: 60601, owner: qymana, bio: "It's Humph! He like fries and making grumble noises when you pet him!", avatar: File.open((File.join(Rails.root,'/public/cat7.jpg')))}
 	])
 
+5.times { Battle.create() }
+
+PetBattle.create([
+	{pet_id: 1, battle_id: 1, winner: true, button_score: 999},
+	{pet_id: 3, battle_id: 1, winner: false, button_score: 1},
+	{pet_id: 1, battle_id: 2, winner: true, button_score: 999},
+	{pet_id: 3, battle_id: 2, winner: false, button_score: 1},
+	{pet_id: 1, battle_id: 3, winner: true, button_score: 999},
+	{pet_id: 3, battle_id: 3, winner: false, button_score: 1},
+	{pet_id: 1, battle_id: 4, winner: true, button_score: 999},
+	{pet_id: 3, battle_id: 4, winner: false, button_score: 1},
+	{pet_id: 1, battle_id: 5, winner: nil, button_score: 999},
+	{pet_id: 3, battle_id: 5, winner: nil, button_score: nil}
+	])
 
