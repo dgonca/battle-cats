@@ -13,10 +13,8 @@ class BattlesController < ApplicationController
 
   def create
     @battle = Battle.create()
-
     @current_user_battle = PetBattle.create(pet_id: params[:pet], battle: @battle)
     @opponet_battle = PetBattle.create(pet_id: params[:battle][:pet_to_battle], battle: @battle)
-
     if @battle.save && @current_user_battle.save && @opponet_battle.save
       redirect_to battle_path(@battle)
     else
