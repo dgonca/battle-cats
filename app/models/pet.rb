@@ -10,4 +10,15 @@ class Pet < ApplicationRecord
 	belongs_to :owner, class_name: "User"
 
 	validates :name, :animal_type, :owner_id, :cuteness, presence: true
+
+  def win_count
+    wins = 0
+    self.battles.all.each do |battle|
+      if battle.winner == self
+        wins += 1
+      end
+    end
+    wins
+  end
+
 end
