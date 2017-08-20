@@ -32,15 +32,25 @@ class BattlesController < ApplicationController
   end
 
   def update
+    @battle = Battle.find_by(id: params[:id])
+    @pet_battle_1 = @battle.pet_battles[0]
+    @pet_battle_2 = @battle.pet_battles[1]
+
+    if @pet_battle_1.pet.owner_id == current_user.id
+      @pet_battle_1.update_attributes(button_score: params[:score])
+    else
+      @pet_battle_2.update_attributes(button_score: params[:score])
+    end
+    p @pet_battle_1
+    p @pet_battle_2
+    # update the pet_battle that belongs to the current_user
+
     p "Wheee!"
+    p params[:score]
+    p "look up!"
     respond_to do |format|
         format.html {render 'show'}
         format.js {p data}
     end
   end
-
-  def find_bullshit
-
-  end
-
 end
