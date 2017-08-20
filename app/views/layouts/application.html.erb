@@ -4,6 +4,8 @@
     <title>BattleCats</title>
     <%= csrf_meta_tags %>
 
+   <link href="https://fonts.googleapis.com/css?family=Orbitron:400,700|Raleway:400,700" rel="stylesheet">
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -19,9 +21,9 @@
 
     <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
       <% if !logged_in? %>
-        <a class="navbar-brand" href="/">BATTLE CATS</a>
+        <a class="navbar-brand nav-header" href="/">BATTLE CATS</a>
       <% else %>
-        <a class="navbar-brand" href="/pets">BATTLE CATS</a>
+        <a class="navbar-brand nav-header" href="/pets">BATTLE CATS</a>
       <% end %>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
