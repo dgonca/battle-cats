@@ -15,12 +15,21 @@
 </ul>
 
 
+
 <p class="h3">Completed Battles</p>
 <% @user.pets.each do |pet| %>
   <% pet.battles.each do |battle| %>
-    <% if battle.has_winner? %>
+
+  <% if battle.has_winner? %>
+    <% battle.set_winner %>
     <ul class="list-group">
-    <li class="list-group-item"><%= battle.pet_battles[0].pet.name %> vs <%= battle.pet_battles[1].pet.name %>, <%= battle.created_at.strftime("%b %e, %l:%M %p") %>, winner = <strong><%= battle.winner.name %></strong></li>
+    <li class="list-group-item"><%= battle.pet_battles[0].pet.name %> vs <%= battle.pet_battles[1].pet.name %>, <%= battle.created_at.strftime("%b %e, %l:%M %p") %>, winner = <strong>
+        <%= battle.winner.name %>
+        </strong></li>
+    </ul>
+    <% elsif battle.is_tie? %>
+    <ul class="list-group">
+    <li class="list-group-item"><%= battle.pet_battles[0].pet.name %> vs <%= battle.pet_battles[1].pet.name %>, <%= battle.created_at.strftime("%b %e, %l:%M %p") %>, <%= battle.tie %></li>
     </ul>
     <% end %>
   <% end %>

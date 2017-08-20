@@ -3,7 +3,10 @@ class Battle < ApplicationRecord
 	validates :pet_battles, length: {maximum: 2}
 
   def has_winner?
-    return true if set_winner != nil && set_loser != nil
+
+    if !is_tie? && set_winner != nil && set_loser != nil
+      return true
+    end
   end
 
   def set_winner
@@ -15,11 +18,25 @@ class Battle < ApplicationRecord
     end
   end
 
+  def tie
+    "Game was a Tie."
+  end
+
   def winner
     if has_winner?
-      pet_battle = self.pet_battles.all.select {|petbattle| petbattle.winner == true}
+      p self.pet_battles
+      # pet_battle = self.pet_battles.all.select {|petbattle| petbattle.winner == true}
+      pet_battle = self.pet_battles.select {|petbattle| p pet_battle}
+      p "***********"
+      p pet_battle
+      p "***********"
       return pet_battle[0].pet
     end
+  end
+
+  def is_tie?
+    scores = find_scores
+    return true if scores[0] == scores[1]
   end
 
   def set_loser
