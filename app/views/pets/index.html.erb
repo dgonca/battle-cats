@@ -3,7 +3,9 @@
 <% if @pets %>
   <ul class="list-group">
     <% @pets.each do |pet| %>
-      <li class="list-group-item"><%= image_tag pet.avatar.url(:thumb), class: "img-circle"%>  <%= link_to pet.name, pet_path(pet), class: "inline" %>  </li>
+    	<% unless pet.owner_id == current_user.id %>
+      	<li class="list-group-item"><%= image_tag pet.avatar.url(:thumb), class: "img-circle"%>  <%= link_to pet.name, pet_path(pet), class: "inline" %>  </li>
+    	<% end %>
     <% end %>
   </ul>
  <% end %>
