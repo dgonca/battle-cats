@@ -1,15 +1,15 @@
 {
   "RSpec": {
     "coverage": {
-      "/home/matt/battle-cats/app/helpers/application_helper.rb": [
+      "/Users/apprentice/battle-cats/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/home/matt/battle-cats/app/helpers/sessions_helper.rb": [
+      "/Users/apprentice/battle-cats/app/helpers/sessions_helper.rb": [
         1,
         null,
         1,
-        103,
+        117,
         null,
         1,
         16,
@@ -18,7 +18,7 @@
         null,
         null,
         1,
-        71,
+        85,
         null,
         null,
         1,
@@ -26,7 +26,7 @@
         null,
         null
       ],
-      "/home/matt/battle-cats/app/controllers/pets_controller.rb": [
+      "/Users/apprentice/battle-cats/app/controllers/pets_controller.rb": [
         1,
         null,
         1,
@@ -84,17 +84,21 @@
         null,
         null
       ],
-      "/home/matt/battle-cats/app/controllers/application_controller.rb": [
+      "/Users/apprentice/battle-cats/app/controllers/application_controller.rb": [
         1,
         1,
         1,
         null
       ],
-      "/home/matt/battle-cats/app/controllers/sessions_controller.rb": [
+      "/Users/apprentice/battle-cats/app/controllers/sessions_controller.rb": [
         1,
         1,
         1,
         14,
+        0,
+        null,
+        14,
+        null,
         null,
         null,
         1,
@@ -124,7 +128,7 @@
         null,
         null
       ],
-      "/home/matt/battle-cats/app/controllers/users_controller.rb": [
+      "/Users/apprentice/battle-cats/app/controllers/users_controller.rb": [
         1,
         1,
         null,
@@ -144,9 +148,7 @@
         null,
         null,
         1,
-        null,
         13,
-        null,
         null,
         null,
         null,
@@ -161,7 +163,7 @@
         null,
         null
       ],
-      "/home/matt/battle-cats/app/models/pet.rb": [
+      "/Users/apprentice/battle-cats/app/models/pet.rb": [
         1,
         null,
         1,
@@ -187,12 +189,12 @@
         null,
         null
       ],
-      "/home/matt/battle-cats/app/models/application_record.rb": [
+      "/Users/apprentice/battle-cats/app/models/application_record.rb": [
         1,
         1,
         null
       ],
-      "/home/matt/battle-cats/app/models/user.rb": [
+      "/Users/apprentice/battle-cats/app/models/user.rb": [
         1,
         1,
         1,
@@ -208,7 +210,7 @@
         null,
         null
       ],
-      "/home/matt/battle-cats/app/models/pet_battle.rb": [
+      "/Users/apprentice/battle-cats/app/models/pet_battle.rb": [
         1,
         1,
         1,
@@ -219,19 +221,13 @@
         null,
         null
       ],
-      "/home/matt/battle-cats/app/models/battle.rb": [
+      "/Users/apprentice/battle-cats/app/models/battle.rb": [
         1,
         1,
         1,
         null,
         1,
-        0,
         null,
-        null,
-        1,
-        0,
-        0,
-        0,
         0,
         0,
         null,
@@ -241,7 +237,25 @@
         0,
         0,
         0,
+        0,
+        0,
         null,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null,
+        1,
+        0,
+        0,
         null,
         null,
         1,
@@ -284,6 +298,6 @@
         null
       ]
     },
-    "timestamp": 1503266232
+    "timestamp": 1503268333
   }
 }
