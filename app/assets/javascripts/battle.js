@@ -13,14 +13,13 @@ var fightButtonListener = function() {
       $.ajax({
         method: "put",
         url: "/battles/" + $divNum,
-        data: {score: score}
+        data: {score: clicks}
       });
     };
 
     var hideSmashButton = function() {
       $("#smash-button").hide();
-      score = clicks;
-      sendPromise(score);
+      sendPromise(clicks);
     };
 
     setTimeout(hideSmashButton, 2000);
@@ -32,8 +31,8 @@ var fightButtonListener = function() {
 
 var clickAccumulator = function() {
   $("#smash-button").on("click", function(){
-      clicks += 1;
-      return clicks;
+    clicks += 1;
+    return clicks;
   });
 };
 
