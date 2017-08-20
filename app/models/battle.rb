@@ -46,8 +46,17 @@ class Battle < ApplicationRecord
     scores
   end
 
+
+
   def pending_battle?
     scores = find_scores
     return true if scores.include?(nil)
+  end
+
+  def user_not_played
+    if pending_battle?
+      pet_battle = self.pet_battles.all.select {|pet_battle| pet_battle.button_score == nil}
+      return pet_battle[0].pet
+    end
   end
 end
