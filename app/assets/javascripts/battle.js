@@ -1,4 +1,5 @@
 $(document).ready(function(){
+  $("#redirect-to-profile").hide()
  fightButtonListener();
 })
 
@@ -19,6 +20,7 @@ var fightButtonListener = function() {
 
    var hideSmashButton = function() {
      $("#smash-button").hide();
+     $("#redirect-to-profile").show()
      sendPromise(clicks);
    };
 
