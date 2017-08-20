@@ -1,6 +1,7 @@
 class BattlesController < ApplicationController
 
   def show
+    @battle = Battle.find_by(id: params[:id])
   end
 
   def new
@@ -15,6 +16,7 @@ class BattlesController < ApplicationController
   end
 
   def create
+    p "Where am I?"
     p params
     @battle = Battle.create()
 
@@ -30,6 +32,15 @@ class BattlesController < ApplicationController
   end
 
   def update
+    p "Wheee!"
+    respond_to do |format|
+        format.html {render 'show'}
+        format.js {p data}
+    end
+  end
+
+  def find_bullshit
+
   end
 
 end
