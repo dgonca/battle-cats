@@ -1,1 +1,39 @@
-<h1>we are here</h1>
+
+<div class="card bg-light border-primary mb-3">
+    <div class="card-header border-primary ">
+      <%= @battle.pet_battles[0].pet.name %>
+      vs.
+      <%= @battle.pet_battles[1].pet.name %>
+    </div>
+    <div class="pet-show-card">
+      <div class="top-part-of-card">
+        <div class="buttons-div">
+
+          <%= link_to "Game Over - Click Here", current_user, :id => "redirect-to-profile",
+      :class => "btn btn-warning action-buttons game-over" %>
+
+        </div>
+        <div class="circular-landscape">
+          <img class="avatar-img" src=<%= @battle.pet_battles[0].pet.avatar.url(:medium) %>>
+          </div>
+        <div class="circular-landscape">
+          <img class="avatar-img" src=<%= @battle.pet_battles[1].pet.avatar.url(:medium)%>>
+          </div>
+          <div class="pet-show-card-body">
+            <h3 class="pet-show-card-title"></h3>
+          <div class="stats-div">
+
+            </div>
+            <div class="buttons-div">
+              <div class="<%= @battle.id %>">
+              <button class="btn btn-warning action-buttons" id="fight-button">Start!</button>
+              </div>
+            </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+
