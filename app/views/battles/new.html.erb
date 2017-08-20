@@ -6,9 +6,9 @@
     <div class="field battle-pick-pet-list list-group">
     <% @user_pets.each do |pet| %>
       <div class="battle-pick-pet-list-item list-group-item">
-      <span class="circular-landscape small-circle pick-ur-pet-items">
+      <div class="circular-landscape small-circle pick-ur-pet-items">
         <%= image_tag pet.avatar.url(:thumb), class: "avatar-img" %>
-      </span>
+      </div>
       <span class="battle-new-pet-name pick-ur-pet-items">
       <%= radio_button_tag(:pet, "#{pet.id}") %> <%= pet.name%>
       </span>

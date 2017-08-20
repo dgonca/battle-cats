@@ -1,5 +1,4 @@
-
-.circular-landscape{
+.circular-landscape {
 	margin-top: 20px;
 	display: inline-block;
   position: relative;
@@ -13,9 +12,6 @@
 .small-circle {
   width: 90px;
   height: 90px;
-  /*border: none;*/
-
-
 }
 
 .avatar-img  {
@@ -54,7 +50,6 @@
 .stats, .action-buttons {
 	display: inline-block;
 	width: 40%;
-	/*padding-bottom: px;*/
 	border-bottom: 2px solid black;
 }
 
