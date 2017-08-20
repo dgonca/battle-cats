@@ -58,6 +58,8 @@ class Battle < ApplicationRecord
     scores
   end
 
+
+
   def pending_battle?
     scores = find_scores
     return true if scores.include?(nil)

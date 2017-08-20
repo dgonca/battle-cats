@@ -4,23 +4,27 @@
 </div> -->
 
 
-  <div class="card bg-light border-primary mb-3">
+  <div class="card bg-light border-primary mb-3 box-shadow-div">
   	<div class="card-header border-primary "><%= @pet.animal_type %></div>
 		<div class="pet-show-card">
 	 		<div class="top-part-of-card">
 				<div class="circular-landscape">
-			  		<img class="avatar-img" src=<%= @pet.avatar.url(:medium) %>>
+			  		<img class="avatar-img big-image" src=<%= @pet.avatar.url(:medium) %>>
 			  	</div>
 			  	<div class="pet-show-card-body">
 				    <h3 class="pet-show-card-title"><%= @pet.name %></h3>
 					<div class="stats-div">
 					    <p class="show-card-c stats">Cuteness: <%= @pet.cuteness %></p>
-					    <p class="show-card-w stats">Wins: <%= @pet.battles.count %></p>
+					    <p class="show-card-w stats">Wins: <%= @pet.win_count %></p>
 				    </div>
 				    <div class="buttons-div">
-				    	<%= link_to "Vote", "/pets/#{@pet.id}/votes", method: :put, remote: true, class: "btn btn-success action-buttons" %>
-				    	<%= link_to "Battle #{@pet.name}", {controller: :battles, action: :new, :pet => @pet.id},  class: "btn btn-warning action-buttons"  %>
-
+				    	<% if @pet.owner_id == current_user.id %>
+				    	<%= link_to "Vote", "/pets/#{@pet.id}/votes", method: :put, remote: true, class: "disabled btn btn-success action-buttons" %>
+				    		<%= link_to "Battle #{@pet.name}", {controller: :battles, action: :new, :pet => @pet.id},  class: "disabled btn btn-warning action-buttons" %>
+				    	<% else %>
+				    		<%= link_to "Vote", "/pets/#{@pet.id}/votes", method: :put, remote: true, class: "btn btn-success action-buttons" %>
+				    		<%= link_to "Battle #{@pet.name}", {controller: :battles, action: :new, :pet => @pet.id},  class: " btn btn-warning action-buttons"  %>
+				    	<% end %>
 				    </div>
 				</div>
 			</div>

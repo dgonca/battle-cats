@@ -46,7 +46,7 @@ feature "clicking on the navbar when logged in" do
 		click_button('Log In')
 
 		visit("/users/1")
-		
+
 		click_link("User Profile")
 		expect(page).to have_current_path("/users/1")
 	end
@@ -63,7 +63,7 @@ feature "clicking on the navbar when logged in" do
 		click_button('Log In')
 
 		visit("/users/1")
-		
+
 		click_link("Logout")
 		expect(page).to have_current_path root_path
 	end

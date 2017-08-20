@@ -12,13 +12,21 @@ class BattlesController < ApplicationController
   end
 
   def create
-    @battle = Battle.create()
-    @current_user_battle = PetBattle.create(pet_id: params[:pet], battle: @battle)
-    @opponet_battle = PetBattle.create(pet_id: params[:battle][:pet_to_battle], battle: @battle)
-    if @battle.save && @current_user_battle.save && @opponet_battle.save
-      redirect_to battle_path(@battle)
-    else
+    if params[:pet] == nil
+      @pet_to_battle = Pet.find(params[:battle][:pet_to_battle])
+      @user = User.find(session[:user_id])
+      @user_pets = @user.pets.all
+      flash[:error] = "You must select one of your pets to battle with!"
       render 'new'
+    else
+      @battle = Battle.create()
+      @current_user_battle = PetBattle.create(pet_id: params[:pet], battle: @battle)
+      @opponet_battle = PetBattle.create(pet_id: params[:battle][:pet_to_battle], battle: @battle)
+      if @battle.save && @current_user_battle.save && @opponet_battle.save
+        redirect_to battle_path(@battle)
+      else
+        render 'new'
+      end
     end
   end
 
@@ -32,16 +40,9 @@ class BattlesController < ApplicationController
     else
       @pet_battle_2.update_attributes(button_score: params[:score])
     end
-    p @pet_battle_1
-    p @pet_battle_2
-    # update the pet_battle that belongs to the current_user
-
-    p "Wheee!"
-    p params[:score]
-    p "look up!"
     respond_to do |format|
         format.html {render 'show'}
-        format.js {p data}
+        format.js {data}
     end
   end
 end
