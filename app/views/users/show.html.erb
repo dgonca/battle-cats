@@ -14,6 +14,7 @@
   <% end %>
 </ul>
 
+
 <p class="h3">Completed Battles</p>
 <% @user.pets.each do |pet| %>
   <% pet.battles.each do |battle| %>
@@ -24,6 +25,7 @@
     <% end %>
   <% end %>
 <% end %>
+
 
 <p class="h3">Incomplete Battles - Click to Join!</p>
 <% @user.pets.each do |pet| %>
