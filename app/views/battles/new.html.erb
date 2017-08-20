@@ -1,14 +1,18 @@
 <div class="card bg-light border-primary mb-3">
   <div class="card-header border-primary ">New Battle!</div>
   <%= bootstrap_form_for :battle, url: "/battles", html: {class: "form-signin"} do |f| %>
-  <h2>Pick your Pet to Battle With!</h2>
+  <div class="display-4">Pick Your Pet to Battle With!!</div>
     <%= f.hidden_field 'pet_to_battle', value: @pet_to_battle.id %>
-    <div class="field">
+    <div class="field battle-pick-pet-list list-group">
     <% @user_pets.each do |pet| %>
-      <div class="circular-landscape small-circle">
-        <%= image_tag pet.avatar.url(:thumb), control_class: "avatar-img" %>
-      </div>
+      <div class="battle-pick-pet-list-item list-group-item">
+      <span class="circular-landscape small-circle pick-ur-pet-items">
+        <%= image_tag pet.avatar.url(:thumb), class: "avatar-img" %>
+      </span>
+      <span class="battle-new-pet-name pick-ur-pet-items">
       <%= radio_button_tag(:pet, "#{pet.id}") %> <%= pet.name%>
+      </span>
+      </div>
     <% end %>
     </div>
     <div class="actions">

@@ -15,11 +15,11 @@
 				    <h3 class="pet-show-card-title"><%= @pet.name %></h3>
 					<div class="stats-div">
 					    <p class="show-card-c stats">Cuteness: <%= @pet.cuteness %></p>
-					    <p class="show-card-w stats">Wins: <%= @pet.battles.count %></p>
+					    <p class="show-card-w stats">Wins: <%= @pe unt %></p>
 				    </div>
 				    <div class="buttons-div">
-				    	<%= link_to "Vote", "/pets/#{@pet.id}/votes", method: :put, remote: true, class: "btn btn-success action-buttons" %>
-				    	<%= link_to "Battle #{@pet.name}", {controller: :battles, action: :new, :pet => @pet.id},  class: "btn btn-warning action-buttons"  %>
+				    	<%= link_to "Vote", "/pets/#{@pet.id}/votes", method: :put, remote: true, class: "btn btn-success action-buttons show-vote-button" %>
+				    	<%= link_to "Battle #{@pet.name}", {controller: :battles, action: :new, :pet => @pet.id},  class: "btn btn-warning action-buttons show-battle-button"  %>
 
 				    </div>
 				</div>
