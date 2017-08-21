@@ -24,6 +24,11 @@ class UsersController < ApplicationController
 		end
 	end
 
+	def destroy
+		authenticate!
+		
+	end
+
 
 private
 
