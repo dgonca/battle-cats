@@ -45,4 +45,3 @@ PetBattle.create([
 	{pet_id: 1, battle_id: 5, winner: nil, button_score: 999},
 	{pet_id: 3, battle_id: 5, winner: nil, button_score: nil}
 	])
-
