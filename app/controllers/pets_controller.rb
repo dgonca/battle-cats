@@ -3,6 +3,7 @@ class PetsController < ApplicationController
 	before_action :set_pet, only: [:show, :edit, :update, :destroy, :vote]
 
 	def index
+    authenticate!
    	@pets = Pet.all
  	end
 
@@ -11,14 +12,14 @@ class PetsController < ApplicationController
 	end
 
   def new
+    authenticate!
     @user = User.find_by(id: params[:user_id])
     @pet = Pet.new
   end
 
   def create
-
+    authenticate!
     @user = User.find_by(id: params[:user_id])
-
     @pet = @user.pets.build(pet_params)
 
     if @pet.save
@@ -29,6 +30,7 @@ class PetsController < ApplicationController
   end
 
   def vote
+    authenticate!
     p @pet.cuteness
     @pet.update_attributes(cuteness: @pet.cuteness + 1)
     @pet.save
