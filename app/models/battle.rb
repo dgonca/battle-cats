@@ -51,14 +51,23 @@ class Battle < ApplicationRecord
   end
 
   def find_scores
+    p "========================================"
+    p self
     scores = []
     self.pet_battles.all.each do |pb|
+
       scores << pb.button_score
     end
     scores
   end
 
-
+  # def find_scores
+  #   scores = []
+  #   self.pet_battles.all.each do |pb|
+  #     scores << pb.button_score
+  #   end
+  #   scores
+  # end
 
   def pending_battle?
     scores = find_scores
