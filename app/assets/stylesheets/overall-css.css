@@ -34,8 +34,13 @@ body {
   margin: 10px 0;
 }
 
-.
+.btn{
+  margin: 3px;
+}
 
+/*.pet-list a{
+  text-transform: capitalize;
+}*/
 
 
 

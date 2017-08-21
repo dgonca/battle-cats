@@ -26,15 +26,19 @@ class UsersController < ApplicationController
 
 	def destroy
 		authenticate!
-		
+		@user.destroy
+		session.delete(:user_id)
+    	respond_to do |format|
+      		format.html { redirect_to root_path, notice: 'User was successfully destroyed.' }
+		end
 	end
 
 
 private
 
 	def set_user
-			@user = User.find(params[:id])
-		end
+		@user = User.find(params[:id])
+	end
 
 	def user_params
 		params.require(:user).permit(:password, :password_confirmation, :email)
