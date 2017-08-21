@@ -22,12 +22,17 @@ class Pet < ApplicationRecord
     wins
   end
 
-  def sum_cuteness
-    self.votes.reduce(0) do |sum, vote_object|
-      p sum
-      p vote_object.cuteness
-      sum += vote_object.cuteness
+  def cuteness
+    self.votes.count + 2
+  end
+
+  def not_voted_already?
+    self.votes.each do |vote_object|
+      if vote_object.user_id == self.owner_id
+        return true
+      end
     end
+    return false
   end
 
 end

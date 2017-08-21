@@ -14,16 +14,22 @@
 			  	<div class="pet-show-card-body">
 				    <h3 class="pet-show-card-title"><%= @pet.name %></h3>
 					<div class="stats-div">
-					    <p class="show-card-c stats">Cuteness: <%= @pet.sum_cuteness %></p>
+					    <p class="show-card-c stats">Cuteness: <%= @pet.cuteness %></p>
 					    <p class="show-card-w stats">Wins: <%= @pet.win_count %></p>
 				    </div>
 				    <div class="buttons-div">
 				    	<% if @pet.owner_id == current_user.id %>
-				    	<%= link_to "Vote", "/pets/#{@pet.id}/votes", method: :put, remote: true, class: "disabled btn btn-success action-buttons" %>
+				    	<%= link_to "Vote", "/pets/#{@pet.id}/votes", method: :put, remote: true, class: "vote-button disabled btn btn-success action-buttons" %>
 				    		<%= link_to "Battle #{@pet.name}", {controller: :battles, action: :new, :pet => @pet.id},  class: "disabled btn btn-warning action-buttons" %>
 				    	<% else %>
-				    		<%= link_to "Vote", "/pets/#{@pet.id}/votes", method: :put, remote: true, class: "btn btn-success action-buttons" %>
-				    		<%= link_to "Battle #{@pet.name}", {controller: :battles, action: :new, :pet => @pet.id},  class: " btn btn-warning action-buttons"  %>
+
+				    		<% if @pet.not_voted_already? %>
+				    			<%= link_to "Vote", "/pets/#{@pet.id}/votes", method: :put, remote: true, class: "vote-button btn btn-success action-buttons" %>
+				    		<% else %>
+				    			<%= link_to "Vote", "/pets/#{@pet.id}/votes", method: :put, remote: true, class: "vote-button disabled btn btn-success action-buttons" %>
+				    		<% end %>
+
+				    		<%= link_to "Battle #{@pet.name}", {controller: :battles, action: :new, :pet => @pet.id},  class: "btn btn-warning action-buttons"  %>
 				    	<% end %>
 				    </div>
 				</div>
