@@ -1,4 +1,5 @@
 class PetsController < ApplicationController
+  include PetsHelper
 
 	before_action :set_pet, only: [:show, :edit, :update, :destroy, :vote]
 
@@ -16,7 +17,6 @@ class PetsController < ApplicationController
   end
 
   def create
-
     @user = User.find_by(id: params[:user_id])
 
     @pet = @user.pets.build(pet_params)
@@ -29,12 +29,10 @@ class PetsController < ApplicationController
   end
 
   def vote
-    p @pet.cuteness
-    @pet.update_attributes(cuteness: @pet.cuteness + 1)
-    @pet.save
-    p @pet.cuteness
-
-    if @pet.save
+    p "================================================"
+    p params
+    vote = Vote.create(pet_id: params[:id], user_id: current_user.id)
+    if vote.save
       respond_to do |format|
         format.html {render 'show'}
         format.js {render 'vote'}
