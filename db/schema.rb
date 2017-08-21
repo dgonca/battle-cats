@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170818195658) do
+ActiveRecord::Schema.define(version: 20170821152522) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,7 +35,6 @@ ActiveRecord::Schema.define(version: 20170818195658) do
     t.string "bio"
     t.integer "zipcode"
     t.integer "owner_id", null: false
-    t.integer "cuteness", default: 2
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "avatar_file_name"
@@ -47,6 +46,14 @@ ActiveRecord::Schema.define(version: 20170818195658) do
   create_table "users", force: :cascade do |t|
     t.string "email", null: false
     t.string "password_digest", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "votes", force: :cascade do |t|
+    t.integer "pet_id"
+    t.integer "user_id"
+    t.integer "cuteness", default: 2
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

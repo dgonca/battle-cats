@@ -16,10 +16,11 @@ class PetsController < ApplicationController
   end
 
   def create
-
     @user = User.find_by(id: params[:user_id])
 
     @pet = @user.pets.build(pet_params)
+    
+    Vote.create(pet_id: @pet.id)
 
     if @pet.save
       redirect_to user_path(@user)

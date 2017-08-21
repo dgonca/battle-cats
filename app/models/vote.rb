@@ -1,6 +1,6 @@
 class Vote < ApplicationRecord
-	belongs_to :user
+	belongs_to :user, optional: true
 	belongs_to :pet
 
-	validates :user_id, :pet_id, presence: true
+	validates :pet_id, presence: true
 end

@@ -6,7 +6,6 @@ class CreatePets < ActiveRecord::Migration[5.1]
       t.string  :bio
       t.integer :zipcode
       t.integer :owner_id, null: false 
-      t.integer :cuteness, default: 2
       
       t.timestamps
     end

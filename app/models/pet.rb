@@ -7,6 +7,7 @@ class Pet < ApplicationRecord
 
   has_many :pet_battles
 	has_many :battles, through: :pet_battles
+  has_many :votes
 	belongs_to :owner, class_name: "User"
 
 	validates :name, :animal_type, :owner_id, presence: true
@@ -19,6 +20,14 @@ class Pet < ApplicationRecord
       end
     end
     wins
+  end
+
+  def sum_cuteness
+    self.votes.reduce(0) do |sum, vote_object|
+      p sum
+      p vote_object.cuteness
+      sum += vote_object.cuteness
+    end
   end
 
 end
