@@ -1,7 +1,7 @@
 $(document).ready(function(){
- $("#redirect-to-profile").hide()
- fightButtonListener();
-})
+  $("#redirect-to-profile").hide();
+  fightButtonListener();
+});
 
 var score;
 var clicks = 0;
@@ -19,15 +19,16 @@ $("#fight-button").one("click", function(){
 
    var hideSmashButton = function() {
      $("#smash-button").hide();
-     $("#redirect-to-profile").show()
+     $("#redirect-to-profile").show();
      sendPromise(clicks);
+
+
    };
 
    setTimeout(hideSmashButton, 2000);
    replaceFightButton();
    clickAccumulator();
-
- });
+    });
 }
 
 var clickAccumulator = function() {
