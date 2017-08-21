@@ -17,7 +17,7 @@ class BattlesController < ApplicationController
     @current_user_battle = PetBattle.create(pet_id: params[:pet], battle: @battle)
     @opponet_battle = PetBattle.create(pet_id: params[:battle][:pet_to_battle], battle: @battle)
 
-    # get the opponent pet's owner 
+    # get the opponent pet's owner
     p @pet = Pet.find(params[:pet])
     p @opponent_pet = Pet.find(params[:battle][:pet_to_battle])
     p @opponent_owner = @opponent_pet.owner
@@ -46,6 +46,7 @@ class BattlesController < ApplicationController
       @battle = Battle.create()
       @current_user_battle = PetBattle.create(pet_id: params[:pet], battle: @battle)
       @opponet_battle = PetBattle.create(pet_id: params[:battle][:pet_to_battle], battle: @battle)
+    end
       if @battle.save && @current_user_battle.save && @opponet_battle.save
         p"*****************************"
         p "Sending email to opponent"
