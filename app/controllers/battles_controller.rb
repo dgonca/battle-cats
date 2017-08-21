@@ -1,18 +1,20 @@
 class BattlesController < ApplicationController
 
   def show
+    authenticate!
     @battle = Battle.find_by(id: params[:id])
   end
 
   def new
-    @battle = Battle.new
-    @pet_to_battle = Pet.find(params[:pet])
-    @user = User.find(session[:user_id])
-    @user_pets = @user.pets.all
+    authenticate!
+      @battle = Battle.new
+      @pet_to_battle = Pet.find(params[:pet])
+      @user = User.find(session[:user_id])
+      @user_pets = @user.pets.all
   end
 
   def create
-
+    authenticate!
     @battle = Battle.create()
     @current_user_battle = PetBattle.create(pet_id: params[:pet], battle: @battle)
     @opponet_battle = PetBattle.create(pet_id: params[:battle][:pet_to_battle], battle: @battle)
@@ -60,6 +62,7 @@ class BattlesController < ApplicationController
   end
 
   def update
+    authenticate!
     @battle = Battle.find_by(id: params[:id])
     @pet_battle_1 = @battle.pet_battles[0]
     @pet_battle_2 = @battle.pet_battles[1]

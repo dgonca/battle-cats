@@ -4,6 +4,7 @@ class PetsController < ApplicationController
 	before_action :set_pet, only: [:show, :edit, :update, :destroy, :vote]
 
 	def index
+    authenticate!
    	@pets = Pet.all
  	end
 
@@ -12,13 +13,14 @@ class PetsController < ApplicationController
 	end
 
   def new
+    authenticate!
     @user = User.find_by(id: params[:user_id])
     @pet = Pet.new
   end
 
   def create
+    authenticate!
     @user = User.find_by(id: params[:user_id])
-
     @pet = @user.pets.build(pet_params)
 
     if @pet.save
@@ -29,8 +31,7 @@ class PetsController < ApplicationController
   end
 
   def vote
-    p "================================================"
-    p params
+    authenticate!
     vote = Vote.create(pet_id: params[:id], user_id: current_user.id)
     if vote.save
       respond_to do |format|

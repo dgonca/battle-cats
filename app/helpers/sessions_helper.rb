@@ -14,6 +14,6 @@ module SessionsHelper
 	end
 
 	def authenticate!
-		redirect_to "/404" unless logged_in?
+		redirect_to "/no_access" unless logged_in?
 	end
 end
