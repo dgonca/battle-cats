@@ -5,8 +5,8 @@ class Pet < ApplicationRecord
   validates_attachment_size :avatar, :in => 0.megabytes..1.megabytes
 
 
-  has_many :pet_battles, depedent: :destroy
-	has_many :battles, through: :pet_battles, depedent: :destroy
+  has_many :pet_battles, dependent: :destroy
+	has_many :battles, through: :pet_battles, dependent: :destroy
   has_many :votes, depedent: :destroy
 	belongs_to :owner, class_name: "User"
 
