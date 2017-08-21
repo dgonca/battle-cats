@@ -41,6 +41,12 @@ class PetsController < ApplicationController
     end
   end
 
+  def destroy
+    @user = User.find(@pet.owner_id)
+    @pet.destroy
+    redirect_to user_path(@user)
+  end
+
 private
 
   def set_pet
