@@ -7,7 +7,7 @@ RSpec.describe PetsController, type: :controller do
   filepath = File.join(home, "/battle-cats/public/cat1.jpg")
 
   let!(:user) {User.create!(email: "saham@att.net", password: "test")}
-  let!(:pet) {Pet.create(name: "Zee", animal_type: "Zee", bio: "a cute Zee", zipcode: "60192", cuteness: 10, owner: user, avatar: File.open(filepath))}
+  let!(:pet) {Pet.create(name: "Zee", animal_type: "Zee", bio: "a cute Zee", zipcode: "60192", owner: user, avatar: File.open(filepath))}
   before(:each) do
     session[:user_id] = 1
   end
@@ -65,7 +65,7 @@ RSpec.describe PetsController, type: :controller do
         home = Dir.home
         filepath = File.join(home, "/battle-cats/public/cat1.jpg")
 
-        post :create,  params: { "user_id" => user.id, pet: {name: "Zee", animal_type: "Zee", bio: "a cute Zee", zipcode: "60192", cuteness: 10, avatar: Rack::Test::UploadedFile.new(filepath)}}
+        post :create,  params: { "user_id" => user.id, pet: {name: "Zee", animal_type: "Zee", bio: "a cute Zee", zipcode: "60192", avatar: Rack::Test::UploadedFile.new(filepath)}}
 
         pet_new = assigns(:pet)
         expect(pet_new.persisted?).to be true
@@ -78,7 +78,7 @@ RSpec.describe PetsController, type: :controller do
   describe "routes for pets", :type => :routing do
     home = Dir.home
     filepath = File.join(home, "/battle-cats/public/cat1.jpg")
-    let!(:pet) {Pet.create(name: "Zee", animal_type: "Zee", bio: "a cute Zee", zipcode: "60192", cuteness: 10, avatar: File.open(filepath))}
+    let!(:pet) {Pet.create(name: "Zee", animal_type: "Zee", bio: "a cute Zee", zipcode: "60192", avatar: File.open(filepath))}
     it "routes /pets to /pets/:id action " do
 
       expect(get("/pets/1")).to route_to(controller: "pets",

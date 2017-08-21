@@ -5,13 +5,22 @@
         1,
         null
       ],
+
       "/Users/dominiquegoncalves/Documents/DBC/onsite/phase3/final/battle-cats/app/helpers/sessions_helper.rb": [
         1,
         null,
         1,
         171,
+
+
         null,
+        0,
+        null,
+        null
+      ],
+      "/Users/dominiquegoncalves/Documents/DBC/onsite/phase3/final/battle-cats/app/helpers/sessions_helper.rb": [
         1,
+
         27,
         27,
         null,
@@ -27,6 +36,7 @@
         null
       ],
       "/Users/dominiquegoncalves/Documents/DBC/onsite/phase3/final/battle-cats/app/controllers/pets_controller.rb": [
+
         1,
         null,
         1,
@@ -63,10 +73,7 @@
         0,
         0,
         0,
-        0,
-        null,
-        0,
-        0,
+
         0,
         0,
         null,
@@ -211,10 +218,11 @@
         1,
         1,
         1,
-        null,
         1,
         null,
         1,
+        null,
+        1,
         0,
         0,
         0,
@@ -223,6 +231,9 @@
         null,
         0,
         null,
+        null,
+        1,
+        0,
         null,
         null
       ],
@@ -232,6 +243,7 @@
         null
       ],
       "/Users/dominiquegoncalves/Documents/DBC/onsite/phase3/final/battle-cats/app/models/user.rb": [
+
         1,
         1,
         1,
@@ -335,6 +347,8 @@
         null
       ]
     },
-    "timestamp": 1503347563
+
+    "timestamp": 1503348395
+
   }
 }

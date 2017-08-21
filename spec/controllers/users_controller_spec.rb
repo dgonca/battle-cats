@@ -53,14 +53,13 @@ RSpec.describe UsersController, type: :controller do
 
       it "renders show page" do
         post :create, params: { user: {email: "one@one.com", password: "password"} }
-        expect(response).to render_template("show")
+        expect(response).to redirect_to("show")
       end
     end
 
     context "when invalid params are passed" do
 
       it "does not create a new user in the database" do
-
         expect {
           post :create, params: { user: {email: "one@one.com", password: ""} }
         }.to_not change { User.count}
