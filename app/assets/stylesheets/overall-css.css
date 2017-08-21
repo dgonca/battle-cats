@@ -43,9 +43,9 @@ body {
 
 }
 
-/*.pet-list a{
-  text-transform: capitalize;
-}*/
+.pet-list{
+  padding-top: 0px;
+}
 
 
 

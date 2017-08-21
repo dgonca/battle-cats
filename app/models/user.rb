@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-	has_many :pets, foreign_key: :owner_id
+	has_many :pets, foreign_key: :owner_id, dependent: :destroy
 	has_many :votes
 	has_secure_password
 
