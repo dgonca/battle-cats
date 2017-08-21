@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.describe UsersController, type: :controller do
-  let!(:user) {User.create!(email: "matt@matt.com", password: "mattmatt")}
+  let!(:user) {User.create!(id: 1, email: "matt@matt.com", password: "mattmatt")}
 
   before(:each) do
     session[:user_id] = 1
@@ -37,7 +37,7 @@ RSpec.describe UsersController, type: :controller do
       context "when valid params are passed" do
       it "responds with status code 302" do
         post :create, params: { user: {email: "one@one.com", password: "password"} }
-        expect(response).to have_http_status 200
+        expect(response).to have_http_status 302
       end
 
       it "creates a new user in the database" do
@@ -53,14 +53,13 @@ RSpec.describe UsersController, type: :controller do
 
       it "renders show page" do
         post :create, params: { user: {email: "one@one.com", password: "password"} }
-        expect(response).to render_template("show")
+        expect(response).to redirect_to("show")
       end
     end
 
     context "when invalid params are passed" do
 
       it "does not create a new user in the database" do
-
         expect {
           post :create, params: { user: {email: "one@one.com", password: ""} }
         }.to_not change { User.count}

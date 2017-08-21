@@ -7,6 +7,7 @@ class Pet < ApplicationRecord
 
   has_many :pet_battles
 	has_many :battles, through: :pet_battles
+  has_many :votes
 	belongs_to :owner, class_name: "User"
 
 	validates :name, :animal_type, :owner_id, presence: true
@@ -21,4 +22,7 @@ class Pet < ApplicationRecord
     wins
   end
 
+  def cuteness
+    self.votes.count + 2
+  end
 end

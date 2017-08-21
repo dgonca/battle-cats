@@ -1,4 +1,5 @@
 class PetsController < ApplicationController
+  include PetsHelper
 
 	before_action :set_pet, only: [:show, :edit, :update, :destroy, :vote]
 
@@ -31,12 +32,8 @@ class PetsController < ApplicationController
 
   def vote
     authenticate!
-    p @pet.cuteness
-    @pet.update_attributes(cuteness: @pet.cuteness + 1)
-    @pet.save
-    p @pet.cuteness
-
-    if @pet.save
+    vote = Vote.create(pet_id: params[:id], user_id: current_user.id)
+    if vote.save
       respond_to do |format|
         format.html {render 'show'}
         format.js {render 'vote'}

@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 	before_action :set_user, only: [:show, :edit, :update, :destroy]
-
+	include SessionsHelper
+	
 	def new
 		@user = User.new
 		render 'new'
