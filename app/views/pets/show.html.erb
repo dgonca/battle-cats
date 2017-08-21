@@ -23,7 +23,7 @@
 				    		<%= link_to "Battle #{@pet.name}", {controller: :battles, action: :new, :pet => @pet.id},  class: "disabled btn btn-warning action-buttons" %>
 				    	<% else %>
 
-				    		<% if @pet.not_voted_already? %>
+				    		<% if not_voted_already?(@pet.id) %>
 				    			<%= link_to "Vote", "/pets/#{@pet.id}/votes", method: :put, remote: true, class: "vote-button btn btn-success action-buttons" %>
 				    		<% else %>
 				    			<%= link_to "Vote", "/pets/#{@pet.id}/votes", method: :put, remote: true, class: "vote-button disabled btn btn-success action-buttons" %>

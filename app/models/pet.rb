@@ -25,14 +25,4 @@ class Pet < ApplicationRecord
   def cuteness
     self.votes.count + 2
   end
-
-  def not_voted_already?
-    self.votes.each do |vote_object|
-      if vote_object.user_id == self.owner_id
-        return true
-      end
-    end
-    return false
-  end
-
 end

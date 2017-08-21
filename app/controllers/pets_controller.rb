@@ -1,4 +1,5 @@
 class PetsController < ApplicationController
+  include PetsHelper
 
 	before_action :set_pet, only: [:show, :edit, :update, :destroy, :vote]
 
