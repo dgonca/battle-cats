@@ -27,8 +27,6 @@ ActiveRecord::Schema.define(version: 20170821152522) do
     t.integer "button_score"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["battle_id"], name: "index_pet_battles_on_battle_id"
-    t.index ["pet_id"], name: "index_pet_battles_on_pet_id"
   end
 
   create_table "pets", force: :cascade do |t|
@@ -37,13 +35,13 @@ ActiveRecord::Schema.define(version: 20170821152522) do
     t.string "bio"
     t.integer "zipcode"
     t.integer "owner_id", null: false
+    t.integer "cuteness", default: 2
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "avatar_file_name"
     t.string "avatar_content_type"
     t.integer "avatar_file_size"
     t.datetime "avatar_updated_at"
-    t.index ["owner_id"], name: "index_pets_on_owner_id"
   end
 
   create_table "users", force: :cascade do |t|
