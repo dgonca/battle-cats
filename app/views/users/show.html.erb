@@ -30,7 +30,7 @@
     </ul>
     <% elsif battle.is_tie? %>
     <ul class="list-group">
-    <li class="list-group-item"><%= battle.pet_battles[0].pet.name %> vs <%= battle.pet_battles[1].pet.name %>, <%= battle.created_at.strftime("%b %e, %l:%M %p") %>, <%= battle.tie %></li>
+    <li class="list-group-item"><%= battle.pet_battles[0].pet.name %> vs <%= battle.pet_battles[1].pet.name %>, <%= battle.updated_at.strftime("%b %e, %l:%M %p") %>, <%= battle.tie %></li>
     </ul>
     <% end %>
   <% end %>
@@ -41,7 +41,7 @@
 <% @user.pets.each do |pet| %>
   <% pet.battles.each do |battle| %>
     <% if battle.pending_battle? && battle.user_not_played == pet %>
-      <ul class="list-group">
+      <ul class="list-group incomplete">
         <li class="list-group-item"><%= link_to "#{battle.pet_battles[0].pet.name} vs #{battle.pet_battles[1].pet.name}", battle_path(battle) %></li>
       </ul>
     <% end %>
