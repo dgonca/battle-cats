@@ -18,4 +18,6 @@ Rails.application.routes.draw do
 
   put "/pets/:id/votes", to: "pets#vote"
   resources :battles
+
+  get "/no_access", to: "errors#no_access"
 end

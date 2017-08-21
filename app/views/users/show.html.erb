@@ -5,17 +5,18 @@
 </h1>
 
 <%= button_to "Create A New Pet", new_user_pet_path(@user), method: :get, :class => "btn btn-primary btn-lg new-pet-button" %>
+<%= button_to 'Delete User', @user, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-warning btn-sm" %>
 
 
 <ul class="list-group pet-list">
   <h2>Your Pets:</h2>
   <% @user.pets.each do |pet| %>
-    <li class="list-group-item list-group-item-action"><a href="/users/<%= @user.id %>/pets/<%= pet.id %>" ><%= pet.name %></a> </li>
+    <li class="list-group-item list-group-item-action pet-list"><a href="/users/<%= @user.id %>/pets/<%= pet.id %>" ><%= pet.name %></a> <%= link_to 'Delete Pet', pet, method: :delete, data: { confirm: 'Are you sure?'}  %></li>
   <% end %>
 </ul>
 
 
-#please work
+
 <p class="h3">Completed Battles</p>
 <% @user.pets.each do |pet| %>
   <% pet.battles.each do |battle| %>
@@ -59,6 +60,8 @@
     <% end %>
   <% end %>
 <% end %>
+
+
 
 
 

@@ -36,6 +36,8 @@ gem 'simplecov', '~> 0.8.2', :require => false, :group => :test
 gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+#rails 12
+gem 'rails_12factor', group: :production
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
