@@ -51,8 +51,6 @@ class Battle < ApplicationRecord
   end
 
   def find_scores
-    p "========================================"
-    p self
     scores = []
     self.pet_battles.all.each do |pb|
 
