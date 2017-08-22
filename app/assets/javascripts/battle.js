@@ -1,8 +1,17 @@
 $(document).ready(function(){
   $("#redirect-to-profile").hide();
   fightButtonListener();
+  movePetPicture();
 });
 
+var movePetPicture = function() {
+  $(".pet-show-card").on("click","#smash-button", function(){
+    $("#right-pet").animate({left: "300px"}, 50);
+    $("#right-pet").animate({left: "0px"}, 50);
+    $("#left-pet").animate({right: "300px"}, 50);
+    $("#left-pet").animate({right: "0px"}, 50);
+  })
+}
 var score;
 var clicks = 0;
 var fightButtonListener = function() {

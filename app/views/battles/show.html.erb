@@ -12,10 +12,10 @@
       :class => "btn btn-warning action-buttons game-over hidden" %>
 
         </div>
-        <div class="circular-landscape">
+        <div id="left-pet" class="circular-landscape">
           <img class="avatar-img big-image" src=<%= @battle.pet_battles[0].pet.avatar.url(:medium) %>>
           </div>
-        <div class="circular-landscape">
+        <div id="right-pet" class="circular-landscape">
           <img class="avatar-img big-image" src=<%= @battle.pet_battles[1].pet.avatar.url(:medium)%>>
           </div>
           <div class="pet-show-card-body">
