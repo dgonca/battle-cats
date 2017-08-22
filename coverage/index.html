@@ -14,7 +14,7 @@
       <img src="./assets/0.8.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2017-08-22T15:40:18-05:00">2017-08-22T15:40:18-05:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2017-08-22T16:15:32-05:00">2017-08-22T16:15:32-05:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,7 +25,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         3.97
+         4.04
        </span>
     </span> hits/line)
   </h2>
@@ -67,7 +67,7 @@
         <td>36</td>
         <td>32</td>
         <td>4</td>
-        <td>2.3</td>
+        <td>2.5</td>
       </tr>
       
       <tr>
@@ -117,7 +117,7 @@
         <td>10</td>
         <td>10</td>
         <td>0</td>
-        <td>41.3</td>
+        <td>42.0</td>
       </tr>
       
       <tr>
@@ -213,7 +213,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         3.28
+         3.36
        </span>
     </span> hits/line)
   </h2>
@@ -255,7 +255,7 @@
         <td>36</td>
         <td>32</td>
         <td>4</td>
-        <td>2.3</td>
+        <td>2.5</td>
       </tr>
       
       <tr>
@@ -444,7 +444,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         23.12
+         23.51
        </span>
     </span> hits/line)
   </h2>
@@ -496,7 +496,7 @@
         <td>10</td>
         <td>10</td>
         <td>0</td>
-        <td>41.3</td>
+        <td>42.0</td>
       </tr>
       
     </tbody>
@@ -835,20 +835,20 @@
           <code class="ruby">  def vote</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="38">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="5" data-linenumber="38">
+          <span class="hits">5</span>
           
           <code class="ruby">    authenticate!</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="39">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="5" data-linenumber="39">
+          <span class="hits">5</span>
           
           <code class="ruby">    vote = Vote.create(pet_id: params[:id], user_id: current_user.id)</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="40">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="5" data-linenumber="40">
+          <span class="hits">5</span>
           
           <code class="ruby">    if vote.save</code>
         </li>
@@ -859,20 +859,20 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="42">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="5" data-linenumber="42">
+          <span class="hits">5</span>
           
           <code class="ruby">      respond_to do |format|</code>
         </li>
       
-        <li class="covered" data-hits="8" data-linenumber="43">
-          <span class="hits">8</span>
+        <li class="covered" data-hits="9" data-linenumber="43">
+          <span class="hits">9</span>
           
           <code class="ruby">        format.html {render &#39;show&#39;}</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="44">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="6" data-linenumber="44">
+          <span class="hits">6</span>
           
           <code class="ruby">        format.js {render &#39;vote&#39;}</code>
         </li>
@@ -955,8 +955,8 @@
           <code class="ruby">  def set_pet</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="58">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="5" data-linenumber="58">
+          <span class="hits">5</span>
           
           <code class="ruby">    @pet = Pet.find(params[:id])</code>
         </li>
@@ -1699,8 +1699,8 @@
           <code class="ruby">	def session_id</code>
         </li>
       
-        <li class="covered" data-hits="190" data-linenumber="4">
-          <span class="hits">190</span>
+        <li class="covered" data-hits="193" data-linenumber="4">
+          <span class="hits">193</span>
           
           <code class="ruby">		session[:user_id]</code>
         </li>
@@ -1717,14 +1717,14 @@
           <code class="ruby">	def current_user</code>
         </li>
       
-        <li class="covered" data-hits="31" data-linenumber="7">
-          <span class="hits">31</span>
+        <li class="covered" data-hits="32" data-linenumber="7">
+          <span class="hits">32</span>
           
           <code class="ruby">		if session_id</code>
         </li>
       
-        <li class="covered" data-hits="31" data-linenumber="8">
-          <span class="hits">31</span>
+        <li class="covered" data-hits="32" data-linenumber="8">
+          <span class="hits">32</span>
           
           <code class="ruby">			current_user ||= User.find(session_id)</code>
         </li>
@@ -1753,8 +1753,8 @@
           <code class="ruby">	def logged_in?</code>
         </li>
       
-        <li class="covered" data-hits="128" data-linenumber="13">
-          <span class="hits">128</span>
+        <li class="covered" data-hits="129" data-linenumber="13">
+          <span class="hits">129</span>
           
           <code class="ruby">		session_id != nil</code>
         </li>
@@ -1777,8 +1777,8 @@
           <code class="ruby">	def authenticate!</code>
         </li>
       
-        <li class="covered" data-hits="28" data-linenumber="17">
-          <span class="hits">28</span>
+        <li class="covered" data-hits="29" data-linenumber="17">
+          <span class="hits">29</span>
           
           <code class="ruby">		redirect_to &quot;/no_access&quot; unless logged_in?</code>
         </li>

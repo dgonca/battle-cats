@@ -113,7 +113,10 @@ RSpec.describe PetsController, type: :controller do
       expect(response).to render_template(:show)
     end
 
-
+    it "renders the vote template if json" do
+      put :vote, params: { id: pet.id}, :format => 'js'
+      expect(response).to render_template(:vote)
+    end
   end
     describe "count # of votes " do
 

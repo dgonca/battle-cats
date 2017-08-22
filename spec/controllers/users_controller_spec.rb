@@ -70,7 +70,8 @@ RSpec.describe UsersController, type: :controller do
           expect(assigns(:user)).to be_instance_of(User)
         end
 
-        it "renders the :new template" do
+        it "rendeahamk
+        rs the :new template" do
           post :create, params: { user: {email: "one@one.com", password: ""} }
           expect(response).to render_template(:new)
         end
