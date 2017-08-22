@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :users do
   	resources :pets
   end
-
+  # NOTE: we have 2 resources route. clean up?
   resources :battles
 
   get "/sessions/new", to: "sessions#new"
