@@ -14,27 +14,27 @@
       <img src="./assets/0.8.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2017-08-22T11:21:27-05:00">2017-08-22T11:21:27-05:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2017-08-22T12:31:37-05:00">2017-08-22T12:31:37-05:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="red">66.84%</span></span>
+    (<span class="covered_percent"><span class="red">70.92%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         3.68
+         3.81
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>15</b> files in total.
-    <b>193</b> relevant lines. 
-    <span class="green"><b>129</b> lines covered</span> and
-    <span class="red"><b>64</b> lines missed </span>
+    <b>196</b> relevant lines. 
+    <span class="green"><b>139</b> lines covered</span> and
+    <span class="red"><b>57</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -62,12 +62,12 @@
       
       <tr>
         <td class="strong"><a href="#8671a2f200c742425f1796d628c879104ff3df55" class="src_link" title="app/controllers/pets_controller.rb">app/controllers/pets_controller.rb</a></td>
-        <td class="red strong">67.65 %</td>
-        <td>61</td>
-        <td>34</td>
-        <td>23</td>
-        <td>11</td>
-        <td>1.4</td>
+        <td class="yellow strong">89.19 %</td>
+        <td>64</td>
+        <td>37</td>
+        <td>33</td>
+        <td>4</td>
+        <td>1.9</td>
       </tr>
       
       <tr>
@@ -117,7 +117,7 @@
         <td>10</td>
         <td>10</td>
         <td>0</td>
-        <td>38.5</td>
+        <td>39.9</td>
       </tr>
       
       <tr>
@@ -209,20 +209,20 @@
           <div class="file_list_container" id="Controllers">
   <h2>
     <span class="group_name">Controllers</span>
-    (<span class="covered_percent"><span class="red">77.91%</span></span>
+    (<span class="covered_percent"><span class="yellow">86.52%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         2.95
+         3.1
        </span>
     </span> hits/line)
   </h2>
   <a name="Controllers"></a>
   <div>
     <b>4</b> files in total.
-    <b>86</b> relevant lines. 
-    <span class="green"><b>67</b> lines covered</span> and
-    <span class="red"><b>19</b> lines missed </span>
+    <b>89</b> relevant lines. 
+    <span class="green"><b>77</b> lines covered</span> and
+    <span class="red"><b>12</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -250,12 +250,12 @@
       
       <tr>
         <td class="strong"><a href="#8671a2f200c742425f1796d628c879104ff3df55" class="src_link" title="app/controllers/pets_controller.rb">app/controllers/pets_controller.rb</a></td>
-        <td class="red strong">67.65 %</td>
-        <td>61</td>
-        <td>34</td>
-        <td>23</td>
-        <td>11</td>
-        <td>1.4</td>
+        <td class="yellow strong">89.19 %</td>
+        <td>64</td>
+        <td>37</td>
+        <td>33</td>
+        <td>4</td>
+        <td>1.9</td>
       </tr>
       
       <tr>
@@ -444,7 +444,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         21.56
+         22.34
        </span>
     </span> hits/line)
   </h2>
@@ -496,7 +496,7 @@
         <td>10</td>
         <td>10</td>
         <td>0</td>
-        <td>38.5</td>
+        <td>39.9</td>
       </tr>
       
     </tbody>
@@ -602,11 +602,11 @@
         <div class="source_table" id="8671a2f200c742425f1796d628c879104ff3df55">
   <div class="header">
     <h3>app/controllers/pets_controller.rb</h3>
-    <h4><span class="red">67.65 %</span> covered</h4>
+    <h4><span class="yellow">89.19 %</span> covered</h4>
     <div>
-      <b>34</b> relevant lines. 
-      <span class="green"><b>23</b> lines covered</span> and
-      <span class="red"><b>11</b> lines missed.</span>
+      <b>37</b> relevant lines. 
+      <span class="green"><b>33</b> lines covered</span> and
+      <span class="red"><b>4</b> lines missed.</span>
     </div>
   </div>
   
@@ -811,169 +811,187 @@
           <code class="ruby">  def vote</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="34">
-          
+        <li class="covered" data-hits="2" data-linenumber="34">
+          <span class="hits">2</span>
           
           <code class="ruby">    authenticate!</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="35">
-          
+        <li class="covered" data-hits="2" data-linenumber="35">
+          <span class="hits">2</span>
           
           <code class="ruby">    vote = Vote.create(pet_id: params[:id], user_id: current_user.id)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="36">
-          
+        <li class="covered" data-hits="2" data-linenumber="36">
+          <span class="hits">2</span>
           
           <code class="ruby">    if vote.save</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="37">
+        <li class="covered" data-hits="2" data-linenumber="37">
+          <span class="hits">2</span>
           
+          <code class="ruby">      p &quot;%%%%%%%%%%%%%%%%%%%%&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="38">
+          <span class="hits">2</span>
+          
+          <code class="ruby">      p vote</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="39">
+          <span class="hits">2</span>
+          
+          <code class="ruby">      p &quot;%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="40">
+          <span class="hits">2</span>
           
           <code class="ruby">      respond_to do |format|</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="38">
-          
+        <li class="covered" data-hits="4" data-linenumber="41">
+          <span class="hits">4</span>
           
           <code class="ruby">        format.html {render &#39;show&#39;}</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="39">
-          
+        <li class="covered" data-hits="2" data-linenumber="42">
+          <span class="hits">2</span>
           
           <code class="ruby">        format.js {render &#39;vote&#39;}</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="40">
-          
-          
-          <code class="ruby">      end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="41">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="42">
-          
-          
-          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="43">
           
           
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="44">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="45">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="46">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="44">
+        <li class="covered" data-hits="1" data-linenumber="47">
           <span class="hits">1</span>
           
           <code class="ruby">  def destroy</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="45">
+        <li class="missed" data-hits="0" data-linenumber="48">
           
           
           <code class="ruby">    @user = User.find(@pet.owner_id)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="46">
+        <li class="missed" data-hits="0" data-linenumber="49">
           
           
           <code class="ruby">    @pet.destroy</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="47">
+        <li class="missed" data-hits="0" data-linenumber="50">
           
           
           <code class="ruby">    redirect_to user_path(@user)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="48">
+        <li class="never" data-hits="" data-linenumber="51">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="49">
+        <li class="never" data-hits="" data-linenumber="52">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="50">
+        <li class="covered" data-hits="1" data-linenumber="53">
           <span class="hits">1</span>
           
           <code class="ruby">private</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="51">
+        <li class="never" data-hits="" data-linenumber="54">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="52">
+        <li class="covered" data-hits="1" data-linenumber="55">
           <span class="hits">1</span>
           
           <code class="ruby">  def set_pet</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="53">
-          
+        <li class="covered" data-hits="2" data-linenumber="56">
+          <span class="hits">2</span>
           
           <code class="ruby">    @pet = Pet.find(params[:id])</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="54">
+        <li class="never" data-hits="" data-linenumber="57">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="55">
+        <li class="never" data-hits="" data-linenumber="58">
           
           
           <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="56">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="57">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def pet_params</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="58">
-          <span class="hits">2</span>
-          
-          <code class="ruby">    params.require(:pet).permit(:avatar, :name, :animal_type, :bio, :zipcode)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="59">
           
           
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="60">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def pet_params</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="61">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    params.require(:pet).permit(:avatar, :name, :animal_type, :bio, :zipcode)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="62">
+          
+          
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="60">
+        <li class="never" data-hits="" data-linenumber="63">
           
           
           <code class="ruby">end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="61">
+        <li class="never" data-hits="" data-linenumber="64">
           
           
           <code class="ruby"></code>
@@ -1669,8 +1687,8 @@
           <code class="ruby">	def session_id</code>
         </li>
       
-        <li class="covered" data-hits="178" data-linenumber="4">
-          <span class="hits">178</span>
+        <li class="covered" data-hits="184" data-linenumber="4">
+          <span class="hits">184</span>
           
           <code class="ruby">		session[:user_id]</code>
         </li>
@@ -1687,14 +1705,14 @@
           <code class="ruby">	def current_user</code>
         </li>
       
-        <li class="covered" data-hits="27" data-linenumber="7">
-          <span class="hits">27</span>
+        <li class="covered" data-hits="29" data-linenumber="7">
+          <span class="hits">29</span>
           
           <code class="ruby">		if session_id</code>
         </li>
       
-        <li class="covered" data-hits="27" data-linenumber="8">
-          <span class="hits">27</span>
+        <li class="covered" data-hits="29" data-linenumber="8">
+          <span class="hits">29</span>
           
           <code class="ruby">			current_user ||= User.find(session_id)</code>
         </li>
@@ -1723,8 +1741,8 @@
           <code class="ruby">	def logged_in?</code>
         </li>
       
-        <li class="covered" data-hits="124" data-linenumber="13">
-          <span class="hits">124</span>
+        <li class="covered" data-hits="126" data-linenumber="13">
+          <span class="hits">126</span>
           
           <code class="ruby">		session_id != nil</code>
         </li>
@@ -1747,8 +1765,8 @@
           <code class="ruby">	def authenticate!</code>
         </li>
       
-        <li class="covered" data-hits="24" data-linenumber="17">
-          <span class="hits">24</span>
+        <li class="covered" data-hits="26" data-linenumber="17">
+          <span class="hits">26</span>
           
           <code class="ruby">		redirect_to &quot;/no_access&quot; unless logged_in?</code>
         </li>

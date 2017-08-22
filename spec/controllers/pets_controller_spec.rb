@@ -8,8 +8,11 @@ RSpec.describe PetsController, type: :controller do
 
   let!(:user) {User.create!(email: "saham@att.net", password: "test")}
   let!(:pet) {Pet.create(name: "Zee", animal_type: "Zee", bio: "a cute Zee", zipcode: "60192", owner: user, avatar: File.open(filepath))}
+  let!(:vote_1) {Vote.create(pet_id: pet.id, user_id: 2)}
+  let!(:vote_2) {Vote.create(pet_id: pet.id, user_id: 3)}
+
   before(:each) do
-    session[:user_id] = 1
+    session[:user_id] = user.id
   end
 
   describe "Get # index" do
@@ -45,18 +48,6 @@ RSpec.describe PetsController, type: :controller do
       expect(response).to render_template(:new)
     end
   end
-
-  # describe "Cuteness points" do
-  #   it "increases the points by one when /votes is accessed" do
-  #     # p pet
-  #     # put :vote, params: {id: pet.id}
-  #     # expect(response).to include 11;
-  #     expect {
-  #       put :vote, params: {id: pet.id}
-  #     }.to change(pet, :cuteness)
-
-  #   end
-  # end
 
    describe "POST #create" do
     context "when valid params are passed" do
@@ -95,10 +86,26 @@ RSpec.describe PetsController, type: :controller do
 
     end
    end
+   # add tests for vote
+   describe "Put # vote " do
+    it "has a 200 status code" do
+      put :vote, params: { id: pet.id}
+      expect(response.status).to eq (200)
+    end
 
+    it "adds a vote" do
+      put :vote, params: { id: pet.id}
+      vote_new = assigns(:vote)
+      expect(vote_new).to be_a_kind_of Vote
+    end
+
+    # it "renders the show template" do
+    #   put :vote, params: { id: pet.id}
+    #   expect(response).to render_template(:show)
+    # end
+  end
 
 end
 
 
-#To do:
-# additional testing, add cuteness incrementor button to show page and the method for it
+

@@ -9,7 +9,7 @@ describe Vote do
 
   let!(:new_battle) {Battle.create!()}
   let!(:pet_battle) {PetBattle.create(pet_id: pet.id, battle_id: new_battle.id, winner: "true", button_score: 50)}
-  let!(:vote_1) {Vote.create(pet_id: pet.id,user_id: user.id )}
+  let!(:vote_1) {Vote.create(pet_id: pet.id, user_id: user.id )}
 
   it "has a pet id" do
       expect(vote_1.pet_id).to eq(pet.id)
