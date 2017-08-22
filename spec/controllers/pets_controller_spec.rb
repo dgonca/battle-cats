@@ -69,7 +69,7 @@ RSpec.describe PetsController, type: :controller do
   describe "routes for pets", :type => :routing do
     home = Dir.home
     filepath = File.join(home, "/battle-cats/public/cat1.jpg")
-    let!(:pet) {Pet.create(name: "Zee", animal_type: "Zee", bio: "a cute Zee", zipcode: "60192", avatar: File.open(filepath))}
+    let!(:pet) {Pet.create(name: "Zee", animal_type: "Zee", bio: "a cute Zee", zipcode: "60192")}
     it "routes /pets to /pets/:id action " do
 
       expect(get("/pets/1")).to route_to(controller: "pets",
