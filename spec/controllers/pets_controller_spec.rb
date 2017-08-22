@@ -93,16 +93,16 @@ RSpec.describe PetsController, type: :controller do
       expect(response.status).to eq (200)
     end
 
-    it "adds a vote" do
-      put :vote, params: { id: pet.id}
-      vote_new = assigns(:vote)
-      expect(vote_new).to be_a_kind_of Vote
-    end
-
-    # it "renders the show template" do
+    # it "adds a vote" do
     #   put :vote, params: { id: pet.id}
-    #   expect(response).to render_template(:show)
+    #   vote_new = assigns(:vote)
+    #   expect(vote_new).to be_a_kind_of Vote
     # end
+
+    it "renders the show template" do
+      put :vote, params: { id: pet.id}
+      expect(response).to render_template(:show)
+    end
   end
 
 end
