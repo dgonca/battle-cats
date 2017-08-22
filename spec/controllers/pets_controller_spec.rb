@@ -1,5 +1,6 @@
 require "rails_helper"
 require "rack/test"
+require 'pp'
 
 RSpec.describe PetsController, type: :controller do
 
@@ -10,6 +11,7 @@ RSpec.describe PetsController, type: :controller do
   let!(:pet) {Pet.create(name: "Zee", animal_type: "Zee", bio: "a cute Zee", zipcode: "60192", owner: user, avatar: File.open(filepath))}
   let!(:vote_1) {Vote.create(pet_id: pet.id, user_id: 2)}
   let!(:vote_2) {Vote.create(pet_id: pet.id, user_id: 3)}
+
 
   before(:each) do
     session[:user_id] = user.id
@@ -88,22 +90,37 @@ RSpec.describe PetsController, type: :controller do
    end
    # add tests for vote
    describe "Put # vote " do
+
     it "has a 200 status code" do
       put :vote, params: { id: pet.id}
       expect(response.status).to eq (200)
     end
 
-    # it "adds a vote" do
-    #   put :vote, params: { id: pet.id}
-    #   vote_new = assigns(:vote)
-    #   expect(vote_new).to be_a_kind_of Vote
-    # end
+    it "adds a vote" do
+      put :vote, params: { id: pet.id}
+
+      vote_new = assigns(:vote_1)
+      expect(pet.votes.first).to be_a_kind_of(Vote)
+    end
+
+    it "adds a vote" do
+      expect {
+      put :vote, params: { id: pet.id} }.to change { Vote.count}
+    end
 
     it "renders the show template" do
       put :vote, params: { id: pet.id}
       expect(response).to render_template(:show)
     end
+
+
   end
+    describe "count # of votes " do
+
+      it "has total of votes" do
+        expect(pet.votes.count).to eq (2)
+      end
+    end
 
 end
 
