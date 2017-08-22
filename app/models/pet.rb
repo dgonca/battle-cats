@@ -7,7 +7,7 @@ class Pet < ApplicationRecord
 
   has_many :pet_battles, dependent: :destroy
 	has_many :battles, through: :pet_battles, dependent: :destroy
-  has_many :votes, depedent: :destroy
+  has_many :votes, dependent: :destroy
 	belongs_to :owner, class_name: "User"
 
 	validates :name, :animal_type, :owner_id, presence: true

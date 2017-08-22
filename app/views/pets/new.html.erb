@@ -13,23 +13,23 @@
   <% end %>
 
   <div class="field">
-    <%= f.text_field :name, control_class: "form-control" %>
+    <%= f.text_field :name, :class => "form-control" %>
   </div>
 
   <div class="field">
-    <%= f.select :animal_type, ['dog', 'cat', 'bird', 'snake', 'fish', 'rabbit', 'other'], control_class: "form-control" %>
+    <%= f.select :animal_type, ['dog', 'cat', 'bird', 'snake', 'fish', 'rabbit', 'other'], :class => "form-control" %>
   </div>
   <div class="field">
-    <%= f.text_area :bio, control_class: "form-control", cols: 10, rows: 10 %>
+    <%= f.text_area :bio, :class => "form-control", cols: 10, rows: 10 %>
   </div>
   <div class="field">
-    <%= f.text_field :zipcode, control_class: "form-control"%>
+    <%= f.text_field :zipcode, :class => "form-control"%>
   </div>
   <div class="field">
-    <%= f.file_field :avatar, control_class: "form-control" %>
+    <%= f.file_field :avatar, :class => "form-control" %>
   </div>
   <div class="field">
-    <%= f.submit %>
+    <%= f.submit "Create A New Pet", class: "btn btn-success btn-lg" %>
   </div>
 
 <% end %>
