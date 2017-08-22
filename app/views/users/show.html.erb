@@ -5,6 +5,7 @@
 </h1>
 
 <%= button_to "Create A New Pet", new_user_pet_path(@user), method: :get, :class => "btn btn-primary btn-lg new-pet-button" %>
+<%= button_to 'Edit Profile', "/users/verify/#{current_user.id}", method: :get, :class => "btn btn-warning btn-sm" %>
 <%= button_to 'Delete User', @user, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-warning btn-sm" %>
 
 <div class="pet-list stats-list">

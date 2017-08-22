@@ -10,6 +10,9 @@ Rails.application.routes.draw do
 
   resources :battles
 
+  get "/users/verify/:id", to: "users#verify"
+  put "/users/:id/edit", to: "users#update"
+
   get "/sessions/new", to: "sessions#new"
   delete "/sessions", to: "sessions#destroy"
   post "/sessions", to: "sessions#create"
