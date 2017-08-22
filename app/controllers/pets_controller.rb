@@ -38,10 +38,28 @@ class PetsController < ApplicationController
     authenticate!
     vote = Vote.create(pet_id: params[:id], user_id: current_user.id)
     if vote.save
+      p "%%%%%%%%%%%%%%%%%%%%"
+      p vote
+      p "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
       respond_to do |format|
         format.html {render 'show'}
         format.js {render 'vote'}
       end
+    end
+  end
+
+  def edit
+    @pet = Pet.find(params[:id])
+    render "edit"
+  end
+
+  def update
+    @pet = Pet.find_by(id: params[:id])
+    @pet.assign_attributes(pet_params)
+    if @pet.save
+      render "show"
+    else
+      render "edit"
     end
   end
 

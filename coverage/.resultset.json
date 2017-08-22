@@ -1,11 +1,13 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/dominiquegoncalves/Documents/DBC/onsite/phase3/final/battle-cats/app/helpers/application_helper.rb": [
+
+      "/Users/apprentice/battle-cats/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/dominiquegoncalves/Documents/DBC/onsite/phase3/final/battle-cats/app/helpers/pets_helper.rb": [
+      "/Users/apprentice/battle-cats/app/helpers/pets_helper.rb": [
+
         1,
         null,
         1,
@@ -19,36 +21,40 @@
         null,
         null
       ],
-      "/Users/dominiquegoncalves/Documents/DBC/onsite/phase3/final/battle-cats/app/helpers/sessions_helper.rb": [
+
+      "/Users/apprentice/battle-cats/app/helpers/sessions_helper.rb": [
         1,
         null,
         1,
-        162,
+        184,
         null,
         1,
-        25,
-        25,
+        29,
+        29,
+
         null,
-        null,
-        null,
-        1,
-        112,
         null,
         null,
         1,
-        15,
+
+        126,
+        null,
+        null,
+        1,
+        26,
         null,
         null
       ],
-      "/Users/dominiquegoncalves/Documents/DBC/onsite/phase3/final/battle-cats/app/controllers/pets_controller.rb": [
+      "/Users/apprentice/battle-cats/app/controllers/pets_controller.rb": [
+
         1,
         1,
         null,
         1,
         null,
         1,
-        1,
-        1,
+        4,
+        4,
         null,
         null,
         1,
@@ -56,30 +62,37 @@
         null,
         null,
         1,
+        5,
+        5,
+        5,
+        null,
+        null,
+        1,
+
         2,
         2,
         2,
         null,
-        null,
-        1,
-        0,
-        0,
-        0,
-        null,
-        0,
-        0,
+        2,
+        2,
+
         null,
         0,
         null,
         null,
         null,
         1,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
+
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        4,
+        2,
+
         null,
         null,
         null,
@@ -93,24 +106,30 @@
         1,
         null,
         1,
-        0,
+        2,
         null,
         null,
         null,
         1,
-        0,
+
+        2,
+
         null,
         null,
         null
       ],
-      "/Users/dominiquegoncalves/Documents/DBC/onsite/phase3/final/battle-cats/app/controllers/application_controller.rb": [
+
+      "/Users/apprentice/battle-cats/app/controllers/application_controller.rb": [
+
         1,
         1,
         1,
         null,
         null
       ],
-      "/Users/dominiquegoncalves/Documents/DBC/onsite/phase3/final/battle-cats/app/controllers/sessions_controller.rb": [
+
+      "/Users/apprentice/battle-cats/app/controllers/sessions_controller.rb": [
+
         1,
         1,
         1,
@@ -148,7 +167,9 @@
         null,
         null
       ],
-      "/Users/dominiquegoncalves/Documents/DBC/onsite/phase3/final/battle-cats/app/controllers/users_controller.rb": [
+
+      "/Users/apprentice/battle-cats/app/controllers/users_controller.rb": [
+
         1,
         1,
         1,
@@ -170,8 +191,8 @@
         null,
         null,
         1,
-        12,
-        12,
+        13,
+        13,
         0,
         null,
         null,
@@ -189,7 +210,7 @@
         1,
         null,
         1,
-        12,
+        13,
         null,
         null,
         1,
@@ -197,7 +218,9 @@
         null,
         null
       ],
-      "/Users/dominiquegoncalves/Documents/DBC/onsite/phase3/final/battle-cats/app/mailers/user_battle_email_mailer.rb": [
+
+      "/Users/apprentice/battle-cats/app/mailers/user_battle_email_mailer.rb": [
+
         1,
         1,
         6,
@@ -212,13 +235,141 @@
         null,
         null
       ],
-      "/Users/dominiquegoncalves/Documents/DBC/onsite/phase3/final/battle-cats/app/mailers/application_mailer.rb": [
+
+      "/Users/apprentice/battle-cats/app/mailers/application_mailer.rb": [
+
         1,
         1,
         1,
         null
       ],
-      "/Users/dominiquegoncalves/Documents/DBC/onsite/phase3/final/battle-cats/app/models/pet.rb": [
+
+      "/Users/apprentice/battle-cats/app/models/battle.rb": [
+
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        0,
+        0,
+        null,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null,
+
+        1,
+        0,
+        0,
+
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+
+        0,
+        0,
+
+        null,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        0,
+        null,
+
+        null,
+        null,
+        1,
+        0,
+
+        0,
+        null,
+        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        0,
+        0,
+
+        null,
+        null,
+        1,
+        0,
+        0,
+
+        0,
+        null,
+        null,
+        null
+      ],
+
+      "/Users/apprentice/battle-cats/app/models/application_record.rb": [
+
+        1,
+        1,
+        null
+      ],
+
+      "/Users/apprentice/battle-cats/app/models/pet_battle.rb": [
+
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+
+      "/Users/apprentice/battle-cats/app/models/pet.rb": [
+
         1,
         null,
         1,
@@ -232,6 +383,7 @@
         1,
         null,
         1,
+
         null,
         1,
         0,
@@ -248,29 +400,57 @@
         null,
         null
       ],
-      "/Users/dominiquegoncalves/Documents/DBC/onsite/phase3/final/battle-cats/app/models/application_record.rb": [
+      "/Users/apprentice/battle-cats/app/models/user.rb": [
         1,
         1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        11,
+
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
         null
       ],
-      "/Users/dominiquegoncalves/Documents/DBC/onsite/phase3/final/battle-cats/app/models/user.rb": [
+      "/Users/brendanohandley/Desktop/battle-cats/app/models/user.rb": [
         1,
         1,
         1,
         1,
         null,
+
+        null,
+        null
+      ],
+      "/Users/apprentice/battle-cats/app/models/vote.rb": [
+
         1,
         1,
-        null,
+        1,
         null,
         1,
-        10,
-        null,
-        null,
-        null,
         null
       ]
     },
-    "timestamp": 1503413278
+
+    "timestamp": 1503429448
+
   }
 }
