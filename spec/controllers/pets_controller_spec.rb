@@ -56,7 +56,7 @@ RSpec.describe PetsController, type: :controller do
         home = Dir.home
         filepath = File.join(home, "/battle-cats/public/cat1.jpg")
 
-        post :create,  params: { "user_id" => user.id, pet: {name: "Zee", animal_type: "Zee", bio: "a cute Zee", zipcode: "60192", avatar: Rack::Test::UploadedFile.new(filepath)}}
+        post :create,  params: { "user_id" => user.id, pet: {name: "Zee", animal_type: "Zee", bio: "a cute Zee", zipcode: "60192"}}
 
         pet_new = assigns(:pet)
         expect(pet_new.persisted?).to be true
