@@ -26,13 +26,20 @@ class UsersController < ApplicationController
 	end
 
 	def update
-		authenticate!
-		if passwords_match?
-			current_user.update_attributes(user_params)
-			render "show"
+	authenticate!
+	@user = User.find_by(email: params[:email])
+	p params
+		if @user && @user.authenticate(params[:password])
+			if passwords_match?
+				current_user.update_attributes(user_params)
+				render "show"
+			else
+				@user = User.new
+				render "edit"
+			end
 		else
 			@user = User.new
-			render "edit"
+			render 'new'
 		end
 	end
 
@@ -63,7 +70,7 @@ private
 	end
 
 	def passwords_match?
-		if params[:user][:password] == params[:user][:password_confirmation]
+		if params[:password] == params[:password_confirmation]
 			params[:user][:password] = params[:user][:password_confirmation]
 		else
 			@user = User.find_by(id: params[:user][:id])
