@@ -363,8 +363,16 @@
         null,
         null,
         null
+      ],
+      "/Users/apprentice/battle-cats/app/models/vote.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        null
       ]
     },
-    "timestamp": 1503418245
+    "timestamp": 1503418887
   }
 }
