@@ -20,52 +20,51 @@
 
 <div class="completed-list stats-list">
   <p class="h3">Completed Battles</p>
+  <ul class="list-group">
   <% @user.pets.each do |pet| %>
     <% pet.battles.each do |battle| %>
-
     <% if battle.has_winner? %>
       <% battle.set_winner %>
-      <ul class="list-group">
       <li class="list-group-item"><%= battle.pet_battles[0].pet.name %> vs <%= battle.pet_battles[1].pet.name %>, <%= battle.created_at.strftime("%b %e, %l:%M %p") %>, winner = <strong>
           <%= battle.winner.name %>
           </strong></li>
-      </ul>
+      
       <% elsif battle.is_tie? %>
-      <ul class="list-group">
       <li class="list-group-item"><%= battle.pet_battles[0].pet.name %> vs <%= battle.pet_battles[1].pet.name %>, <%= battle.updated_at.strftime("%b %e, %l:%M %p") %>, <%= battle.tie %></li>
-      </ul>
+      
       <% end %>
     <% end %>
   <% end %>
+  </ul>
 </div>
 
 
 <div class="incomplete-list stats-list">
   <p class="h3">Incomplete Battles - Click to Join!</p>
+  <ul class="list-group incomplete">
   <% @user.pets.each do |pet| %>
     <% pet.battles.each do |battle| %>
       <% if battle.pending_battle? && battle.user_not_played == pet %>
-        <ul class="list-group incomplete">
-          <li class="list-group-item"><%= link_to "#{battle.pet_battles[0].pet.name} vs #{battle.pet_battles[1].pet.name}", battle_path(battle) %></li>
-        </ul>
+          <li class="list-group-item"><%= link_to "#{battle.pet_battles[0].pet.name} vs #{battle.pet_battles[1].pet.name}", battle_path(battle) %></li>   
       <% end %>
     <% end %>
   <% end %>
+  </ul>
 </div>
 
 <div class="waiting-list stats-list">
   <p class="h3">Waiting...</p>
+  <ul class="list-group">
   <% @user.pets.each do |pet| %>
     <% pet.battles.each do |battle| %>
       <% if battle.pending_battle? && battle.user_not_played != pet %>
-        <ul class="list-group">
           <li class="list-group-item">
             <%= battle.pet_battles[0].pet.name %> vs <%= battle.pet_battles[1].pet.name %>, waiting for other player
           </li>
-        </ul>
       <% end %>
     <% end %>
   <% end %>
+  </ul>
 </div>
 
 
