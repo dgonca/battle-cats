@@ -3,7 +3,9 @@
 
 
   <% if flash[:error] %>
+  <div class="alert alert-danger">
     <%= flash[:error]%>
+  </div>
   <% end %>
 
 
@@ -17,13 +19,13 @@
         <%= image_tag pet.avatar.url(:thumb), class: "avatar-img" %>
       </div>
       <span class="battle-new-pet-name pick-ur-pet-items">
-      <%= radio_button_tag(:pet, "#{pet.id}") %> <%= pet.name%>
+      <%= radio_button_tag(:pet, "#{pet.id}") %> <%= pet.name %>
       </span>
       </div>
     <% end %>
     </div>
     <div class="actions">
-      <%= f.submit "Battle!", class: "btn btn-lg btn-primary btn-block" %>
+      <%= f.submit "Battle!", class: "disabled btn btn-lg btn-primary btn-block" %>
     </div>
   <% end %>
 </div>
