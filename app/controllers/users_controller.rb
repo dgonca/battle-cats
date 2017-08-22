@@ -12,7 +12,7 @@ class UsersController < ApplicationController
 		if @user.save
 			UserBattleEmailMailer.notify_user(@user).deliver
 			session[:user_id] = @user.id
-			redirect_to 'show'
+			redirect_to user_path(@user)
 		else
 			render 'new'
 		end

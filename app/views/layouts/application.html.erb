@@ -25,7 +25,7 @@
       <% else %>
         <a class="navbar-brand nav-header" href="/pets">BATTLE CATS</a>
       <% end %>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
@@ -49,7 +49,7 @@
           </li>
           <% end %>
         </ul>
-      </div>
+      </div> -->
     </nav>
 
 
@@ -59,8 +59,15 @@
 
 
     <footer class="footer">
-      <div class="container">
-        <span class="text-muted">Battle Cats is a fun positive battle game.</span>
+      <div class="nav-footer container">
+        <% if logged_in? %>
+          <span><%= link_to "All Pets", pets_path, :class => "nav-foot-link" %></span>
+          <span><%= link_to "User Profile", user_path(current_user), :class => "nav-foot-link" %></span>
+          <span><%= link_to "Logout", "/sessions", method: :delete, :class => "nav-foot-link" %></span>
+        <% else %>
+          <span><%= link_to "Register", new_user_path, :class => "nav-foot-link" %></span>
+          <span><%= link_to "Log In", "/sessions/new", :class => "nav-foot-link" %></span>
+        <% end %>
       </div>
     </footer>
 
