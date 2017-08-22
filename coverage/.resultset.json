@@ -1,13 +1,11 @@
 {
   "RSpec": {
     "coverage": {
-
       "/Users/apprentice/battle-cats/app/helpers/application_helper.rb": [
         1,
         null
       ],
       "/Users/apprentice/battle-cats/app/helpers/pets_helper.rb": [
-
         1,
         null,
         1,
@@ -21,7 +19,6 @@
         null,
         null
       ],
-
       "/Users/apprentice/battle-cats/app/helpers/sessions_helper.rb": [
         1,
         null,
@@ -31,12 +28,10 @@
         1,
         29,
         29,
-
         null,
         null,
         null,
         1,
-
         126,
         null,
         null,
@@ -46,7 +41,6 @@
         null
       ],
       "/Users/apprentice/battle-cats/app/controllers/pets_controller.rb": [
-
         1,
         1,
         null,
@@ -68,21 +62,22 @@
         null,
         null,
         1,
-
         2,
+        2,
+        1,
+        null,
+        null,
         2,
         2,
         null,
         2,
         2,
-
         null,
         0,
         null,
         null,
         null,
         1,
-
         2,
         2,
         2,
@@ -92,7 +87,6 @@
         2,
         4,
         2,
-
         null,
         null,
         null,
@@ -111,25 +105,19 @@
         null,
         null,
         1,
-
         2,
-
         null,
         null,
         null
       ],
-
       "/Users/apprentice/battle-cats/app/controllers/application_controller.rb": [
-
         1,
         1,
         1,
         null,
         null
       ],
-
       "/Users/apprentice/battle-cats/app/controllers/sessions_controller.rb": [
-
         1,
         1,
         1,
@@ -167,9 +155,7 @@
         null,
         null
       ],
-
       "/Users/apprentice/battle-cats/app/controllers/users_controller.rb": [
-
         1,
         1,
         1,
@@ -218,9 +204,7 @@
         null,
         null
       ],
-
       "/Users/apprentice/battle-cats/app/mailers/user_battle_email_mailer.rb": [
-
         1,
         1,
         6,
@@ -235,17 +219,13 @@
         null,
         null
       ],
-
       "/Users/apprentice/battle-cats/app/mailers/application_mailer.rb": [
-
         1,
         1,
         1,
         null
       ],
-
       "/Users/apprentice/battle-cats/app/models/battle.rb": [
-
         1,
         1,
         1,
@@ -277,39 +257,35 @@
         null,
         null,
         null,
-
         1,
         0,
         0,
-
         null,
         null,
         1,
         0,
         0,
         0,
-
         0,
         0,
-
         null,
         null,
         null,
         1,
         0,
         0,
-        null,
         0,
         null,
-
         null,
         null,
         1,
         0,
-
         0,
         null,
         0,
+        null,
+        0,
+        null,
         null,
         null,
         null,
@@ -324,39 +300,20 @@
         0,
         null,
         null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
         1,
         0,
         0,
-
-        null,
-        null,
-        1,
-        0,
-        0,
-
         0,
         null,
         null,
         null
       ],
-
       "/Users/apprentice/battle-cats/app/models/application_record.rb": [
-
         1,
         1,
         null
       ],
-
       "/Users/apprentice/battle-cats/app/models/pet_battle.rb": [
-
         1,
         1,
         1,
@@ -367,9 +324,7 @@
         null,
         null
       ],
-
       "/Users/apprentice/battle-cats/app/models/pet.rb": [
-
         1,
         null,
         1,
@@ -383,7 +338,6 @@
         1,
         null,
         1,
-
         null,
         1,
         0,
@@ -412,35 +366,12 @@
         null,
         1,
         11,
-
-        null,
-        1,
-        0,
-        0,
-        0,
-        0,
         null,
         null,
-        0,
-        null,
-        null,
-        1,
-        0,
-        null,
-        null
-      ],
-      "/Users/brendanohandley/Desktop/battle-cats/app/models/user.rb": [
-        1,
-        1,
-        1,
-        1,
-        null,
-
         null,
         null
       ],
       "/Users/apprentice/battle-cats/app/models/vote.rb": [
-
         1,
         1,
         1,
@@ -449,8 +380,6 @@
         null
       ]
     },
-
-    "timestamp": 1503429448
-
+    "timestamp": 1503441556
   }
 }
