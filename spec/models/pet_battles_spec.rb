@@ -8,7 +8,7 @@ describe PetBattle do
   let!(:pet) {Pet.create(name: "Zee", animal_type: "Zee", bio: "a cute Zee", zipcode: "60192", owner: user, avatar: File.open(filepath))}
 
   let!(:new_battle) {Battle.create!()}
-  let!(:pet_battle) {PetBattle.create(pet_id: pet.id, battle_id: new_battle.id)}
+  let!(:pet_battle) {PetBattle.create(pet_id: pet.id, battle_id: new_battle.id, winner: "true", button_score: 50)}
 
   it "has a battle id" do
       expect(pet_battle.battle_id).to eq(new_battle.id)
@@ -17,4 +17,11 @@ describe PetBattle do
   it "has a pet id" do
       expect(pet_battle.pet_id).to eq(pet.id)
   end
+  it "is a winner" do
+      expect(pet_battle.winner).to be true
+  end
+  it "has a button_score" do
+      expect(pet_battle.button_score).to eq(50)
+  end
+
 end
