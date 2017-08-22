@@ -9,6 +9,7 @@ RSpec.describe PetsController, type: :controller do
 
   let!(:user) {User.create!(email: "saham@att.net", password: "test")}
   let!(:pet) {Pet.create(name: "Zee", animal_type: "Zee", bio: "a cute Zee", zipcode: "60192", owner: user, avatar: File.open(filepath))}
+  let!(:pet_2) {Pet.create(name: "Puff", animal_type: "Cat", bio: "a cute Cat", zipcode: "60192", owner: user, avatar: File.open(filepath))}
   let!(:vote_1) {Vote.create(pet_id: pet.id, user_id: 2)}
   let!(:vote_2) {Vote.create(pet_id: pet.id, user_id: 3)}
 
@@ -118,12 +119,27 @@ RSpec.describe PetsController, type: :controller do
       expect(response).to render_template(:vote)
     end
   end
-    describe "count # of votes " do
+  describe "count # of votes " do
 
-      it "has total of votes" do
-        expect(pet.votes.count).to eq (2)
-      end
+    it "has total of votes" do
+      expect(pet.votes.count).to eq (2)
     end
+  end
+
+  describe "DELETE #destroy" do
+
+    it "deletes a pet" do
+      puts user.pets.count
+      expect {
+        delete :destroy, params: {id: pet.id }}.to change {user.pets.count}
+
+    end
+
+    it "has destroyed a pet" do
+      pet_2.destroy
+      expect(user.pets.count).to eq(1)
+    end
+  end
 
 end
 
