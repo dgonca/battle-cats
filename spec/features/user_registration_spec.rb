@@ -11,7 +11,7 @@ feature "Registering as a new user" do
 		fill_in('Password confirmation', with: 'tomtom')
 
 		click_button('Register')
-		expect(page).to have_content("All Pets")
+		expect(page).to have_content("Register")
 	end
 
 	scenario "redirects back to the login page when false email and password input is provided" do
@@ -22,7 +22,7 @@ feature "Registering as a new user" do
 		fill_in('Password confirmation', with: "NOPE")
 
 		click_button('Register')
-		expect(page).to have_current_path("/users")
+		expect(page).to have_current_path("/")
 	end
 
 	scenario "redirects back to the login page when passwords do not match" do

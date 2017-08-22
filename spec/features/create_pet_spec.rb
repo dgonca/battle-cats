@@ -31,7 +31,7 @@ feature "Creating a new pet" do
 	#NEED TO SELECT THE ANIMAL TYPE FROM THE DROPDOWN MENU STILL
 		fill_in("Bio", with: "Bunbun is a totally rad rabbit who enjoys hopping around and munching on peanuts and carrots")
 		fill_in("Zipcode", with: 99999)
-		click_button("Create Pet")
+		click_button("Create A New Pet")
 		expect(page).to have_current_path("/users/1")
 		expect(page).to have_content("Bunbun")
 	end
