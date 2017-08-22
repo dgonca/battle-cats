@@ -47,5 +47,15 @@ body {
   padding-top: 0px;
 }
 
+.pick-ur-pet-items {
+  display: inline-block;
+  width: 40%;
+  vertical-align: middle;
+  padding: 5px;
+  text-transform: capitalize;
+}
+
+
+
 
 
