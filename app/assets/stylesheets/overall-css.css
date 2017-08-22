@@ -25,9 +25,9 @@ body {
 
 
 .pet-index-pet-name {
-  position: relative;
+  position: absolute;
   bottom: 40px;
-  left: 50px;
+  left: 70px;
 }
 
 .battle-pick-pet-list{
