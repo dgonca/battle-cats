@@ -28,8 +28,11 @@
 				    		<% else %>
 				    			<%= link_to "Vote", "/pets/#{@pet.id}/votes", method: :put, remote: true, class: "vote-button disabled btn btn-success action-buttons" %>
 				    		<% end %>
-
-				    		<%= link_to "Battle #{@pet.name}", {controller: :battles, action: :new, :pet => @pet.id},  class: "btn btn-warning action-buttons"  %>
+				    		<% if current_user.pets.count == 0 %>
+				    			<%= link_to "Battle #{@pet.name}", {controller: :battles, action: :new, :pet => @pet.id},  class: "disabled btn btn-warning action-buttons"  %>
+				    		<% else %>
+				    			<%= link_to "Battle #{@pet.name}", {controller: :battles, action: :new, :pet => @pet.id},  class: "btn btn-warning action-buttons"  %>
+				    		<% end %>
 				    	<% end %>
 				    </div>
 				</div>
