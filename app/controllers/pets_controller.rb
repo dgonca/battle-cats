@@ -45,7 +45,7 @@ class PetsController < ApplicationController
     authenticate!
     @user = User.find(@pet.owner_id)
     @pet.destroy
-    redirect_to "/users/#{@user}"
+    redirect_to "/"
   end
 
 private
