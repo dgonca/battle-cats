@@ -15,6 +15,7 @@ class SessionsController < ApplicationController
 			redirect_to user_path(@user)
 		else
 			@user = User.new
+			@user.valid?
 			render 'new'
 		end
 	end
