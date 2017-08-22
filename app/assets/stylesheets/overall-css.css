@@ -56,6 +56,17 @@ body {
   text-transform: capitalize;
 }
 
+.nav-footer{
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.nav-foot-link{
+  display: inline-block;
+  width: 30%;
+/*  background-color: lightgray;*/
+}
 
 
 
