@@ -20,6 +20,10 @@ class PetsController < ApplicationController
 
   def create
     authenticate!
+    if params[:pet][:avatar] == nil
+      params[:pet][:avatar] = File.open((File.join(Rails.root,'/public/image10.png')))
+    end
+
     @user = User.find_by(id: params[:user_id])
     @pet = @user.pets.build(pet_params)
 
