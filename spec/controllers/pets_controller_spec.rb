@@ -3,11 +3,11 @@ require "rack/test"
 
 RSpec.describe PetsController, type: :controller do
 
-  home = Dir.home
-  filepath = File.join(home, "/battle-cats/public/cat1.jpg")
+  # home = Dir.home
+  # filepath = File.join(home, "/battle-cats/public/cat1.jpg")
 
   let!(:user) {User.create!(email: "saham@att.net", password: "test")}
-  let!(:pet) {Pet.create(name: "Zee", animal_type: "Zee", bio: "a cute Zee", zipcode: "60192", owner: user, avatar: File.open(filepath))}
+  let!(:pet) {Pet.create(name: "Zee", animal_type: "Zee", bio: "a cute Zee", zipcode: "60192", owner: user)}
   let!(:vote_1) {Vote.create(pet_id: pet.id, user_id: 2)}
   let!(:vote_2) {Vote.create(pet_id: pet.id, user_id: 3)}
 
