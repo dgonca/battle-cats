@@ -49,20 +49,20 @@ RSpec.describe PetsController, type: :controller do
     end
   end
 
-   describe "POST #create" do
-    context "when valid params are passed" do
-      it "responds with status code 302" do
+  #  describe "POST #create" do
+  #   context "when valid params are passed" do
+  #     it "responds with status code 302" do
 
 
-        post :create,  params: { "user_id" => user.id, pet: {name: "Zee", animal_type: "Zee", bio: "a cute Zee", zipcode: "60192"}}
+  #       post :create,  params: { "user_id" => user.id, pet: {name: "Zee", animal_type: "Zee", bio: "a cute Zee", zipcode: "60192"}}
 
-        pet_new = assigns(:pet)
-        expect(pet_new.persisted?).to be true
-      end
+  #       pet_new = assigns(:pet)
+  #       expect(pet_new.persisted?).to be true
+  #     end
 
 
-    end
-  end
+  #   end
+  # end
 
   describe "routes for pets", :type => :routing do
     home = Dir.home
