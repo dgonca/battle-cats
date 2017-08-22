@@ -53,8 +53,6 @@ RSpec.describe PetsController, type: :controller do
     context "when valid params are passed" do
       it "responds with status code 302" do
 
-        home = Dir.home
-        filepath = File.join(home, "/battle-cats/public/cat1.jpg")
 
         post :create,  params: { "user_id" => user.id, pet: {name: "Zee", animal_type: "Zee", bio: "a cute Zee", zipcode: "60192"}}
 
