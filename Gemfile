@@ -11,6 +11,8 @@ gem 'rails', '~> 5.1.3'
 gem 'dotenv-rails', groups: [:development, :test]
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18'
+#add AWS sdk 
+gem 'aws-sdk', '~> 2'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
