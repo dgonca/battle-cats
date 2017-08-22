@@ -11,7 +11,7 @@
   <ul class="list-group pet-list">
   <h2>Your Pets:</h2>
   <% @user.pets.each do |pet| %>
-    <li class="list-group-item list-group-item-action pet-list"><a href="/users/<%= @user.id %>/pets/<%= pet.id %>" ><%= pet.name %></a> | <%= link_to 'Delete Pet', pet, method: :delete, data: { confirm: 'Are you sure?'}  %></li>
+    <li class="list-group-item list-group-item-action pet-list"><a href="/users/<%= @user.id %>/pets/<%= pet.id %>" ><%= pet.name %></a> | <%= link_to 'Delete Pet', pet, method: :delete, data: { confirm: 'Are you sure?'}  %> | <%= link_to 'Edit Pet',"/users/#{current_user.id}/pets/#{pet.id}/edit" %> </li>
   <% end %>
 </ul>
 </div>
