@@ -5,7 +5,7 @@ describe PetBattle do
   filepath = File.join(home, "/battle-cats/public/cat1.jpg")
 
   let!(:user) {User.create!(email: "saham@att.net", password: "test")}
-  let!(:pet) {Pet.create(name: "Zee", animal_type: "Zee", bio: "a cute Zee", zipcode: "60192", owner: user, avatar: File.open(filepath))}
+  let!(:pet) {Pet.create(name: "Zee", animal_type: "Zee", bio: "a cute Zee", zipcode: "60192", owner: user)}
 
   let!(:new_battle) {Battle.create!()}
   let!(:pet_battle) {PetBattle.create(pet_id: pet.id, battle_id: new_battle.id, winner: "true", button_score: 50)}
