@@ -1,0 +1,18 @@
+#explosion{
+  background-image: url(/assets/sprites/Spaceship_Explosion_Spritesheet.png);
+  margin: 0;
+  padding: 0;
+  width: 342px;
+  height: 342px;
+  margin: -172px auto;
+  position: relative;
+  text-align: center;
+  z-index: 10000 !important;
+  margin-left: -35px;
+ /* width: 341.33px;
+  height: 341.33px;*/
+}
+
+.battle-img{
+  z-index: -1;
+}

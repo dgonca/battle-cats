@@ -8,15 +8,17 @@
       <div class="top-part-of-card">
         <div class="buttons-div">
 
-          <%= link_to "Game Over - Click Here", current_user, :id => "redirect-to-profile",
-      :class => "btn btn-warning action-buttons game-over hidden" %>
+
 
         </div>
-        <div class="circular-landscape">
-          <img class="avatar-img big-image" src=<%= @battle.pet_battles[0].pet.avatar.url(:medium) %>>
+        <div id="left-pet" class="circular-landscape">
+          <img class="avatar-img big-image battle-img" src=<%= @battle.pet_battles[0].pet.avatar.url(:medium) %>>
           </div>
-        <div class="circular-landscape">
-          <img class="avatar-img big-image" src=<%= @battle.pet_battles[1].pet.avatar.url(:medium)%>>
+          <%= link_to "Game Over - Click Here", current_user, :id => "redirect-to-profile",
+      :class => "btn btn-warning action-buttons game-over hidden" %>
+        <p  id="explosion"></p>  
+        <div id="right-pet" class="circular-landscape">
+          <img class="avatar-img big-image battle-img" src=<%= @battle.pet_battles[1].pet.avatar.url(:medium)%>>
           </div>
           <div class="pet-show-card-body">
             <h3 class="pet-show-card-title"></h3>
