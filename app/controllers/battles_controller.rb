@@ -16,8 +16,14 @@ class BattlesController < ApplicationController
   def create
     authenticate!
     @battle = Battle.create()
+    p "================================================================="
+
+    p "================================================================="
+
+    p "================================================================="
     @current_user_battle = PetBattle.create(pet_id: params[:pet], battle: @battle)
-    @opponet_battle = PetBattle.create(pet_id: params[:battle][:pet_to_battle], battle: @battle)
+    @opponent_battle = PetBattle.create(pet_id: params[:battle][:pet_to_battle], battle: @battle)
+    p @opponent_battle
 
     # get the opponent pet's owner
     p @pet = Pet.find(params[:pet])
@@ -27,7 +33,7 @@ class BattlesController < ApplicationController
     p @opponet_battle
 
 
-    if @battle.save && @current_user_battle.save && @opponet_battle.save
+    if @battle.save && @current_user_battle.save && @opponent_battle.save
       # send email to the opponent to get into battle
       p"*****************************"
       p "Sending email to opponent"
@@ -47,9 +53,9 @@ class BattlesController < ApplicationController
     else
       @battle = Battle.create()
       @current_user_battle = PetBattle.create(pet_id: params[:pet], battle: @battle)
-      @opponet_battle = PetBattle.create(pet_id: params[:battle][:pet_to_battle], battle: @battle)
+      @opponent_battle = PetBattle.create(pet_id: params[:battle][:pet_to_battle], battle: @battle)
     end
-      if @battle.save && @current_user_battle.save && @opponet_battle.save
+      if @battle.save && @current_user_battle.save && @opponent_battle.save
         p"*****************************"
         p "Sending email to opponent"
         p @opponent_owner.email
