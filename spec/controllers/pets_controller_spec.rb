@@ -1,15 +1,17 @@
 require "rails_helper"
 require "rack/test"
+require 'pp'
 
 RSpec.describe PetsController, type: :controller do
 
-  # home = Dir.home
-  # filepath = File.join(home, "/battle-cats/public/cat1.jpg")
-
   let!(:user) {User.create!(email: "saham@att.net", password: "test")}
+
   let!(:pet) {Pet.create(name: "Zee", animal_type: "Zee", bio: "a cute Zee", zipcode: "60192", owner: user)}
+  let!(:pet_2) {Pet.create(name: "Puff", animal_type: "Cat", bio: "a cute Cat", zipcode: "60192", owner: user)}
+
   let!(:vote_1) {Vote.create(pet_id: pet.id, user_id: 2)}
   let!(:vote_2) {Vote.create(pet_id: pet.id, user_id: 3)}
+
 
   before(:each) do
     session[:user_id] = user.id
@@ -49,24 +51,21 @@ RSpec.describe PetsController, type: :controller do
     end
   end
 
-  #  describe "POST #create" do
-  #   context "when valid params are passed" do
-  #     it "responds with status code 302" do
+   describe "POST #create" do
+    context "when valid params are passed" do
+      it "responds with status code 302" do
 
+        post :create,  params: { "user_id" => user.id, pet: {name: "Zee", animal_type: "Zee", bio: "a cute Zee", zipcode: "60192"}}
 
-  #       post :create,  params: { "user_id" => user.id, pet: {name: "Zee", animal_type: "Zee", bio: "a cute Zee", zipcode: "60192"}}
+        pet_new = assigns(:pet)
+        expect(pet_new.persisted?).to be true
+      end
 
-  #       pet_new = assigns(:pet)
-  #       expect(pet_new.persisted?).to be true
-  #     end
-
-
-  #   end
-  # end
+    end
+  end
 
   describe "routes for pets", :type => :routing do
-    home = Dir.home
-    filepath = File.join(home, "/battle-cats/public/cat1.jpg")
+
     let!(:pet) {Pet.create(name: "Zee", animal_type: "Zee", bio: "a cute Zee", zipcode: "60192")}
     it "routes /pets to /pets/:id action " do
 
@@ -86,20 +85,53 @@ RSpec.describe PetsController, type: :controller do
    end
    # add tests for vote
    describe "Put # vote " do
+
     it "has a 200 status code" do
       put :vote, params: { id: pet.id}
       expect(response.status).to eq (200)
     end
 
-    # it "adds a vote" do
-    #   put :vote, params: { id: pet.id}
-    #   vote_new = assigns(:vote)
-    #   expect(vote_new).to be_a_kind_of Vote
-    # end
+    it "adds a vote" do
+      put :vote, params: { id: pet.id}
+
+      vote_new = assigns(:vote_1)
+      expect(pet.votes.first).to be_a_kind_of(Vote)
+    end
+
+    it "adds a vote" do
+      expect {
+      put :vote, params: { id: pet.id} }.to change { Vote.count}
+    end
 
     it "renders the show template" do
       put :vote, params: { id: pet.id}
       expect(response).to render_template(:show)
+    end
+
+    it "renders the vote template if json" do
+      put :vote, params: { id: pet.id}, :format => 'js'
+      expect(response).to render_template(:vote)
+    end
+  end
+  describe "count # of votes " do
+
+    it "has total of votes" do
+      expect(pet.votes.count).to eq (2)
+    end
+  end
+
+  describe "DELETE #destroy" do
+
+    it "deletes a pet" do
+      puts user.pets.count
+      expect {
+        delete :destroy, params: {id: pet.id }}.to change {user.pets.count}
+
+    end
+
+    it "has destroyed a pet" do
+      pet_2.destroy
+      expect(user.pets.count).to eq(1)
     end
   end
 
