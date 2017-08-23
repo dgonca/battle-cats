@@ -19,9 +19,10 @@ class UsersController < ApplicationController
 	end
 
 	def show
-		authenticate!
-		if logged_in? && current_user.id == params[:id]
+		if current_user.id == params[:id].to_i
 			@user = User.find_by(id: params[:id])
+		else
+			redirect_to "/no_access"
 		end
 	end
 
