@@ -46,10 +46,26 @@ class PetsController < ApplicationController
     end
   end
 
+  def edit
+    @pet = Pet.find(params[:id])
+    render "edit"
+  end
+
+  def update
+    @pet = Pet.find_by(id: params[:id])
+    @pet.assign_attributes(pet_params)
+    if @pet.save
+      render "show"
+    else
+      render "edit"
+    end
+  end
+
   def destroy
+    authenticate!
     @user = User.find(@pet.owner_id)
     @pet.destroy
-    redirect_to user_path(@user)
+    redirect_to "/"
   end
 
 private
