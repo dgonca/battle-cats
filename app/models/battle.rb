@@ -3,7 +3,6 @@ class Battle < ApplicationRecord
 	validates :pet_battles, length: {maximum: 2}
 
   def has_winner?
-
     if !is_tie? && set_winner != nil && set_loser != nil
       return true
     end
@@ -11,11 +10,14 @@ class Battle < ApplicationRecord
 
   def set_winner
     scores = find_scores
+
     if !pending_battle?
       winner_pet_id = scores.key(scores.values.max)
-      winner_pet_pb = self.pet_battles.select {|pb| pb.pet_id == winner_pet_id}
+      winner_pet_pb = self.pet_battles.select{|pb| pb.pet_id == winner_pet_id}
       winner_pet_pb[0].update_attributes(winner: true)
       return winner_pet_pb
+    else
+      nil 
     end
   end
 
@@ -26,27 +28,33 @@ class Battle < ApplicationRecord
   def winner
     if has_winner?
       pet_battle = self.pet_battles.all.select {|petbattle| petbattle.winner == true}
-      return pet_battle[0].pet
+      if pet_battle != [] 
+
+        return pet_battle[0].pet
+      end
     end
   end
 
   def is_tie?
     scores = find_scores
-    return true if scores[0] == scores[1]
+    return true if scores.values[0] == scores.values[1]
   end
 
   def set_loser
     scores = find_scores
     if !pending_battle?
       loser_pet_id = scores.key(scores.values.min)
-      loser_pet_pb = self.pet_battles.select {|pb| pb.pet_id == loser_pet_id}
+      loser_pet_pb = self.pet_battles.select{|pb| pb.pet_id == loser_pet_id}
       loser_pet_pb[0].update_attributes(winner: false)
       return loser_pet_pb
+    else
+      nil
     end
   end
 
+
   def loser
-    if has_winner?
+    if has_winner? && !pending_battle?
       pet_battle = self.pet_battles.all.select {|petbattle| petbattle.winner == false}
       return pet_battle[0].pet
     end
@@ -60,11 +68,9 @@ class Battle < ApplicationRecord
     end
     scores
   end
-
-
   def pending_battle?
     scores = find_scores
-    return true if scores.include?(nil)
+    return true if scores.values.include?(nil)
   end
 
   def user_not_played
