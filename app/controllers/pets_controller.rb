@@ -52,6 +52,10 @@ class PetsController < ApplicationController
   end
 
   def update
+    p "********************"
+    p params[:id]
+    p params
+    p "****************************"
     @pet = Pet.find_by(id: params[:id])
     @pet.assign_attributes(pet_params)
     if @pet.save

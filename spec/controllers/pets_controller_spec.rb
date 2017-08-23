@@ -134,6 +134,53 @@ RSpec.describe PetsController, type: :controller do
       expect(user.pets.count).to eq(1)
     end
   end
+  # edit tests
+  describe "edit_pet GET" do
+
+    it "has a 200 status code" do
+      get :edit, params: {id:pet.id}
+      expect(response.status).to eq (200)
+    end
+
+    it "renders the edit template" do
+      get :edit, params: {id:pet.id}
+      expect(response).to render_template(:edit)
+    end
+  end
+
+  #update tests
+  describe "Update tests" do
+    context "when valid params are passed" do
+      it "responds with status code 302" do
+
+        put :update,  params: { id: pet.id, pet: {name: "Zee", animal_type: "Zee", bio: "a cute Zee", zipcode: "60192"}}
+
+        pet_new = assigns(:pet)
+        expect(pet_new.persisted?).to be true
+      end
+
+    end
+  end
+
+  # describe "routes for pets", :type => :routing do
+
+  #   let!(:pet) {Pet.create(name: "Zee", animal_type: "Zee", bio: "a cute Zee", zipcode: "60192")}
+  #   it "routes /pets to /pets/:id action " do
+
+  #     expect(get("/pets/1")).to route_to(controller: "pets",
+  #       action: "show",
+  #       id: "1")
+
+  #   end
+
+  #   it "routes /users/:user_id/pets  to create a pet " do
+
+  #     expect(post("/users/1/pets")).to route_to(controller: "pets",
+  #       action: "create",
+  #       user_id: "1")
+
+  #   end
+  #  end
 
 end
 
