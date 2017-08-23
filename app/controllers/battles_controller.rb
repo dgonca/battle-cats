@@ -16,11 +16,7 @@ class BattlesController < ApplicationController
   def create
     authenticate!
     @battle = Battle.create()
-    p "================================================================="
 
-    p "================================================================="
-
-    p "================================================================="
     @current_user_battle = PetBattle.create(pet_id: params[:pet], battle: @battle)
     @opponent_battle = PetBattle.create(pet_id: params[:battle][:pet_to_battle], battle: @battle)
     p @opponent_battle
@@ -48,7 +44,6 @@ class BattlesController < ApplicationController
       @user = User.find(session[:user_id])
       @user_pets = @user.pets.all
       flash[:error] = "You must select one of your pets to battle with!"
-
       render 'new'
     else
       @battle = Battle.create()

@@ -3,7 +3,6 @@ class Battle < ApplicationRecord
 	validates :pet_battles, length: {maximum: 2}
 
   def has_winner?
-
     if !is_tie? && set_winner != nil && set_loser != nil
       return true
     end
@@ -11,6 +10,7 @@ class Battle < ApplicationRecord
 
   def set_winner
     scores = find_scores
+
     if !pending_battle?
       winner_pet_id = scores.key(scores.values.max)
       winner_pet_pb = self.pet_battles.select{|pb| pb.pet_id == winner_pet_id}
@@ -29,8 +29,7 @@ class Battle < ApplicationRecord
     if has_winner?
       pet_battle = self.pet_battles.all.select {|petbattle| petbattle.winner == true}
       if pet_battle != [] 
-        p "******************************"
-        p pet_battle
+
         return pet_battle[0].pet
       end
     end
@@ -64,12 +63,11 @@ class Battle < ApplicationRecord
   def find_scores
     scores = {}
     self.pet_battles.all.each do |pb|
+      #setting the key to the pet id and the value to button score
       scores[pb.pet_id] = pb.button_score
-      # scores << pb.button_score
     end
     scores
   end
-
   def pending_battle?
     scores = find_scores
     return true if scores.values.include?(nil)
