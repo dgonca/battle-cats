@@ -3,7 +3,6 @@
 </h1>
 
 <%= button_to "Create A New Pet", new_user_pet_path(@user), method: :get, :class => "btn btn-primary btn-lg new-pet-button" %>
-<%= button_to 'Edit Profile', "/users/verify/#{current_user.id}", method: :get, :class => "btn btn-warning btn-sm" %>
 <%= button_to 'Delete User', @user, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-warning btn-sm" %>
 
 <div class="pet-list stats-list">
@@ -19,14 +18,16 @@
 
 <div class="completed-list stats-list">
   <p class="h3">Completed Battles</p>
-  <ul class="list-group">
   <% @user.pets.each do |pet| %>
+  <ul class="list-group">
+    <h6 class="list-headers"><%= pet.name %>'s Complete Battles</h6 class="list-headers">
     <% pet.battles.each do |battle| %>
     <% if battle.has_winner? %>
       <% battle.set_winner %>
-      <li class="list-group-item"><%= battle.pet_battles[0].pet.name %> vs <%= battle.pet_battles[1].pet.name %>, <%= battle.created_at.strftime("%b %e, %l:%M %p") %>, winner = <strong>
-          <%= battle.winner.name %>, score=<%=battle.pet_battles[0].button_score %>
-          <%= battle.loser.name %>, score=<%=battle.pet_battles[1].button_score %>
+
+      <li class="list-group-item"><%= battle.pet_battles[0].pet.name %> <%= battle.pet_battles[0].button_score %> vs <%= battle.pet_battles[1].pet.name %> <%= battle.pet_battles[1].button_score %>, <%= battle.created_at.strftime("%b %e, %l:%M %p") %>, winner = <strong>
+          <%= battle.winner.name %>
+
           </strong></li>
       
       <% elsif battle.is_tie? %>
@@ -34,28 +35,30 @@
       
       <% end %>
     <% end %>
+     </ul>
   <% end %>
-  </ul>
 </div>
 
 
 <div class="incomplete-list stats-list">
   <p class="h3">Incomplete Battles - Click to Join!</p>
-  <ul class="list-group incomplete">
   <% @user.pets.each do |pet| %>
+    <h6 class="list-headers"><%= pet.name %>'s Incomplete Battles</h6 class="list-headers">
+    <ul class="list-group incomplete">
     <% pet.battles.each do |battle| %>
       <% if battle.pending_battle? && battle.user_not_played == pet %>
           <li class="list-group-item"><%= link_to "#{battle.pet_battles[0].pet.name} vs #{battle.pet_battles[1].pet.name}", battle_path(battle) %></li>   
       <% end %>
     <% end %>
-  <% end %>
-  </ul>
+    </ul>
+  <% end %> 
 </div>
 
 <div class="waiting-list stats-list">
   <p class="h3">Waiting...</p>
-  <ul class="list-group">
   <% @user.pets.each do |pet| %>
+    <h6 class="list-headers"><%= pet.name %>'s In Progress Battles</h6 class="list-headers">
+    <ul class="list-group">
     <% pet.battles.each do |battle| %>
       <% if battle.pending_battle? && battle.user_not_played != pet %>
           <li class="list-group-item">
@@ -63,8 +66,8 @@
           </li>
       <% end %>
     <% end %>
+    </ul>
   <% end %>
-  </ul>
 </div>
 
 
