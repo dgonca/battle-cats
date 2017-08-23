@@ -1,5 +1,5 @@
-<%= bootstrap_form_for ([@user, @user.pets.build]), html: {class: "form-signin", :multipart => true} do |f| %>
-  <h2 class="form-signin-heading">Add a Pet</h2>
+<%= bootstrap_form_for :pet, url: "/users/#{current_user.id}/pets/#{@pet.id}", method: :put, html: {class: "form-signin"} do |f| %>
+  <h2 class="form-signin-heading">Edit Pet Details</h2>
   <% if @pet.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@pet.errors.count, "error") %> prohibited this user from being saved:</h2>
@@ -29,7 +29,7 @@
     <%= f.file_field :avatar, :class => "form-control" %>
   </div>
   <div class="field">
-    <%= f.submit "Create A New Pet", class: "btn btn-success btn-lg" %>
+    <%= f.submit "Edit Pet Details", class: "btn btn-success btn-lg" %>
   </div>
 
 <% end %>

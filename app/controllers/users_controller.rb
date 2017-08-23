@@ -12,7 +12,7 @@ class UsersController < ApplicationController
 		if @user.save
 			UserBattleEmailMailer.notify_user(@user).deliver
 			session[:user_id] = @user.id
-			redirect_to 'show'
+			redirect_to user_path(@user)
 		else
 			render 'new'
 		end
@@ -25,6 +25,7 @@ class UsersController < ApplicationController
 		end
 	end
 
+
 	def destroy
 		authenticate!
 		@user.destroy
@@ -34,6 +35,8 @@ class UsersController < ApplicationController
 		end
 	end
 
+	
+
 
 private
 
@@ -42,6 +45,7 @@ private
 	end
 
 	def user_params
-		params.require(:user).permit(:password, :password_confirmation, :email)
+		params.require(:user).permit(:password, :password_confirmation, :new_password, :email)
 	end
+
 end
