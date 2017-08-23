@@ -10,7 +10,8 @@ body {
 }
 
 .game-over {
-  margin-top: 20px;
+  margin; -100px;
+  /*position: relative;*/
 }
 
 .pet-index-header {
@@ -73,6 +74,7 @@ body {
     font-size: .8em;
   }
 }
+
 
 
 
