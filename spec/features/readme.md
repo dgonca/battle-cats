@@ -8,7 +8,15 @@
 Battle Cats is an interactive app for pet lovers who want to show off their pets and battle the cutest pets in their spare time. Users can vote on the cuteness of other pets and earn trophies over time as they win battles.
 
 ##Installation##
-To run the code on your local machine, Ruby, Rails, and the ImageMagick gem are required. First download, install, and verify that Ruby v2.2.2 or greater is installed. Next, download and install Rails v5.0 and the imagemagick gem.  Then, clone the BattleCats repository to your local machine, navigate into its directory, and then run 'bundle install'. Next, execute the command 'rails db:create' followed by 'rails db:migrate'.Then, start a local server using the 'rails server' command and navigate to the appropriate address provided by Puma, which should be 'localhost:3000'.
+To run the code on your local machine, Ruby, Rails, and the ImageMagick gem are required. 
+  * Download, install, and verify that Ruby v2.2.2 or greater is installed. 
+  * Download and install Rails v5.0 
+  * Download imagemagick gem.  
+  * Clone the BattleCats repository to your local machine, navigate into its directory, 
+  * Run 'bundle install'. 
+  * Execute the command 'rails db:create' followed by 'rails db:migrate'.
+  * Start a local server using the 'rails server' command
+  * Navigate to 'localhost:3000'.
 
 The app can be accessed online at 'https://battle-cats-chicago.herokuapp.com/', or by clicking [here](https://battle-cats-chicago.herokuapp.com/).
 
