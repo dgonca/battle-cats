@@ -6,7 +6,7 @@ class Pet < ApplicationRecord
 
 
   has_many :pet_battles, dependent: :destroy
-	has_many :battles, through: :pet_battles, dependent: :destroy
+	has_many :battles, through: :pet_battles
   has_many :votes, dependent: :destroy
 	belongs_to :owner, class_name: "User"
 
@@ -21,7 +21,7 @@ class Pet < ApplicationRecord
     end
     wins
   end
-
+  
   def cuteness
     self.votes.count + 2
   end
