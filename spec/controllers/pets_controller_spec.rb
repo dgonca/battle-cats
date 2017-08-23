@@ -173,30 +173,6 @@ RSpec.describe PetsController, type: :controller do
     end
   end
 
-  # describe "routes for pets", :type => :routing do
-
-
-    # it "routes /pets to /pets/:id action " do
-
-    #   expect(get("/pets/1")).to route_to(controller: "pets",
-    #     action: "show",
-    #     id: "1")
-
-    # end
-
-    # it "renders the show template" do
-    #   put :update,  params: { id: pet.id, pet: {name: "Zee", animal_type: "Zee", bio: "a cute Zee", zipcode: "60192"}}
-    #   expect(response).to render_template(:show)
-    # end
-
-    # it "routes /users/:user_id/pets  to create a pet " do
-
-    #   expect(post("/users/1/pets")).to route_to(controller: "pets",
-    #     action: "create",
-    #     user_id: "1")
-
-    # end
-   # end
 
 end
 
