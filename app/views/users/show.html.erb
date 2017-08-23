@@ -25,7 +25,8 @@
     <% if battle.has_winner? %>
       <% battle.set_winner %>
       <li class="list-group-item"><%= battle.pet_battles[0].pet.name %> vs <%= battle.pet_battles[1].pet.name %>, <%= battle.created_at.strftime("%b %e, %l:%M %p") %>, winner = <strong>
-          <%= battle.winner.name %>
+          <%= battle.winner.name %>, score=<%=battle.pet_battles[0].button_score %>
+          <%= battle.loser.name %>, score=<%=battle.pet_battles[1].button_score %>
           </strong></li>
       
       <% elsif battle.is_tie? %>
