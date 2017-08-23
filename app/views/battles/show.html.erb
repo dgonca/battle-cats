@@ -12,13 +12,13 @@
         <div class="buttons-div">
         </div>
         <div id="left-pet" class="circular-landscape">
-          <img class="avatar-img big-image battle-img" src=<%= @battle.pet_battles[0].pet.avatar.url(:medium) %>>
+          <img class="avatar-img big-image battle-img" src="<%= @battle.pet_battles[0].pet.avatar.url(:medium) %>">
           </div>
           <%= link_to "Game Over - Click Here", current_user, :id => "redirect-to-profile",
       :class => "btn btn-warning action-buttons game-over hidden" %>
-        <p  id="explosion"></p>  
+        <p id="explosion"></p>  
         <div id="right-pet" class="circular-landscape">
-          <img class="avatar-img big-image battle-img" src=<%= @battle.pet_battles[1].pet.avatar.url(:medium)%>>
+          <img class="avatar-img big-image battle-img" src="<%= @battle.pet_battles[1].pet.avatar.url(:medium)%>">
           </div>
           <div class="pet-show-card-body">
             <h3 class="pet-show-card-title"></h3>
