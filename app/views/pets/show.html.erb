@@ -42,6 +42,25 @@
 	    <p class="pet-show-card-bio"><%= @pet.bio %></p>
 
 	    <a href="/pets" class="btn btn-primary">Back to Map</a>
+
+	    <h6><%= @pet.name %>'s Trophies</h6>
+	    <% if @pet.win_count >= 2 && @pet.win_count < 5 %>
+	    	<img src="https://storageforbattlecats.s3.amazonaws.com/public/giphy.gif" class="trophy-items">
+	    <% elsif @pet.win_count  > 4 && @pet.win_count < 8 %>
+	    	<img src="https://storageforbattlecats.s3.amazonaws.com/public/giphy.gif" class="trophy-items">
+	    	<img src="https://storageforbattlecats.s3.amazonaws.com/public/adventuretime.gif" class="trophy-items">
+	    <% elsif @pet.win_count > 7 && @pet.win_count < 11 %>
+	   		<img src="https://storageforbattlecats.s3.amazonaws.com/public/giphy.gif" class="trophy-items">
+	    	<img src="https://storageforbattlecats.s3.amazonaws.com/public/adventuretime.gif" class="trophy-items">
+	    	<img src="https://storageforbattlecats.s3.amazonaws.com/public/cat.gif" class="trophy-items">
+	    <% elsif @pet.win_count > 10 %>
+			<img src="https://storageforbattlecats.s3.amazonaws.com/public/giphy.gif" class="trophy-items">
+	    	<img src="https://storageforbattlecats.s3.amazonaws.com/public/adventuretime.gif" class="trophy-items">
+	    	<img src="https://storageforbattlecats.s3.amazonaws.com/public/cat.gif" class="trophy-items">
+	    	<img src="https://storageforbattlecats.s3.amazonaws.com/public/pizza.gif" class="trophy-items">
+		<% else %>
+			<img src="https://storageforbattlecats.s3.amazonaws.com/public/heart.gif" class="trophy-items">
+	    <% end %>
 	  </div>
 	</div>
 </div>
