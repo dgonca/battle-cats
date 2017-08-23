@@ -51,10 +51,11 @@ RSpec.describe UsersController, type: :controller do
           expect(assigns(:user)).to be_instance_of(User)
         end
 
-        # it "renders show page" do
-        #   post :create, params: { user: {email: "one@one.com", password: "password"} }
-        #   expect(response).to redirect_to("show")
-        # end
+        it "renders show page" do
+          post :create, params: { user: {email: "one@one.com", password: "password"} }
+          new_user = assigns(:user)
+          expect(response).to redirect_to(user_path(new_user.id))
+        end
       end
 
       context "when invalid params are passed" do
@@ -70,7 +71,8 @@ RSpec.describe UsersController, type: :controller do
           expect(assigns(:user)).to be_instance_of(User)
         end
 
-        it "renders the :new template" do
+        it "rendeahamk
+        rs the :new template" do
           post :create, params: { user: {email: "one@one.com", password: ""} }
           expect(response).to render_template(:new)
         end
