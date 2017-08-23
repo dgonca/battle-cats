@@ -68,6 +68,12 @@ body {
 /*  background-color: lightgray;*/
 }
 
+@media (max-width: 350px){
+  .nav-foot-link {
+    font-size: .5em;
+  }
+}
+
 
 
 
