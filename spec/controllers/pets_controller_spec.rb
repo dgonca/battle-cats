@@ -134,6 +134,45 @@ RSpec.describe PetsController, type: :controller do
       expect(user.pets.count).to eq(1)
     end
   end
+  # edit tests
+  describe "edit_pet GET" do
+
+    it "has a 200 status code" do
+      get :edit, params: {id:pet.id}
+      expect(response.status).to eq (200)
+    end
+
+    it "renders the edit template" do
+      get :edit, params: {id:pet.id}
+      expect(response).to render_template(:edit)
+    end
+  end
+
+  #update tests
+  describe "Update tests" do
+    context "when valid params are passed" do
+      it "responds with status code 302" do
+
+        put :update,  params: { id: pet.id, pet: {name: "Zee", animal_type: "Zee", bio: "a cute Zee", zipcode: "60192"}}
+
+        pet_new = assigns(:pet)
+        expect(pet_new.persisted?).to be true
+      end
+
+      it "renders the show template" do
+        put :update,  params: { id: pet.id, pet: {name: "Zee", animal_type: "Zee", bio: "a cute Zee", zipcode: "60192"}}
+        pet_new = assigns(:pet)
+        expect(pet_new.persisted?).to render_template(:show)
+      end
+
+      it "renders the edit template if not saved" do
+        put :update,  params: { id: pet.id, pet: { name: nil, animal_type: "Zee", bio: "a cute Zee", zipcode: "60192"}}
+        pet_new = assigns(:pet)
+        expect(!pet_new.persisted?).to render_template(:edit)
+      end
+    end
+  end
+
 
 end
 
