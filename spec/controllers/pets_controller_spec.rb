@@ -4,15 +4,10 @@ require 'pp'
 
 RSpec.describe PetsController, type: :controller do
 
-  # home = Dir.home
-  # filepath = File.join(home, "/battle-cats/public/cat1.jpg")
-
   let!(:user) {User.create!(email: "saham@att.net", password: "test")}
 
   let!(:pet) {Pet.create(name: "Zee", animal_type: "Zee", bio: "a cute Zee", zipcode: "60192", owner: user)}
   let!(:pet_2) {Pet.create(name: "Puff", animal_type: "Cat", bio: "a cute Cat", zipcode: "60192", owner: user)}
-
-  # let!(:pet) {Pet.create(name: "Zee", animal_type: "Zee", bio: "a cute Zee", zipcode: "60192", owner: user)}
 
   let!(:vote_1) {Vote.create(pet_id: pet.id, user_id: 2)}
   let!(:vote_2) {Vote.create(pet_id: pet.id, user_id: 3)}
@@ -56,24 +51,21 @@ RSpec.describe PetsController, type: :controller do
     end
   end
 
-  #  describe "POST #create" do
-  #   context "when valid params are passed" do
-  #     it "responds with status code 302" do
+   describe "POST #create" do
+    context "when valid params are passed" do
+      it "responds with status code 302" do
 
+        post :create,  params: { "user_id" => user.id, pet: {name: "Zee", animal_type: "Zee", bio: "a cute Zee", zipcode: "60192"}}
 
-  #       post :create,  params: { "user_id" => user.id, pet: {name: "Zee", animal_type: "Zee", bio: "a cute Zee", zipcode: "60192"}}
+        pet_new = assigns(:pet)
+        expect(pet_new.persisted?).to be true
+      end
 
-  #       pet_new = assigns(:pet)
-  #       expect(pet_new.persisted?).to be true
-  #     end
-
-
-  #   end
-  # end
+    end
+  end
 
   describe "routes for pets", :type => :routing do
-    home = Dir.home
-    filepath = File.join(home, "/battle-cats/public/cat1.jpg")
+
     let!(:pet) {Pet.create(name: "Zee", animal_type: "Zee", bio: "a cute Zee", zipcode: "60192")}
     it "routes /pets to /pets/:id action " do
 
