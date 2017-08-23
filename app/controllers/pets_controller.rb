@@ -9,7 +9,7 @@ class PetsController < ApplicationController
  	end
 
 	def show
-
+    authenticate!
 	end
 
   def new
