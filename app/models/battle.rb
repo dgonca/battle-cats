@@ -12,8 +12,9 @@ class Battle < ApplicationRecord
   def set_winner
     scores = find_scores
     if !pending_battle?
-      winner_pet_pb = self.pet_battles[scores.find_index(scores.max)]
-      winner_pet_pb.update_attributes(winner: true)
+      winner_pet_id = scores.key(scores.values.max)
+      winner_pet_pb = self.pet_battles.select {|pb| pb.pet_id == winner_pet_id}
+      winner_pet_pb[0].update_attributes(winner: true)
       return winner_pet_pb
     end
   end
@@ -37,8 +38,9 @@ class Battle < ApplicationRecord
   def set_loser
     scores = find_scores
     if !pending_battle?
-      loser_pet_pb = self.pet_battles[scores.find_index(scores.min)]
-      loser_pet_pb.update_attributes(winner: false)
+      loser_pet_id = scores.key(scores.values.min)
+      loser_pet_pb = self.pet_battles.select {|pb| pb.pet_id == loser_pet_id}
+      loser_pet_pb[0].update_attributes(winner: false)
       return loser_pet_pb
     end
   end
@@ -51,21 +53,14 @@ class Battle < ApplicationRecord
   end
 
   def find_scores
-    scores = []
+    scores = {}
     self.pet_battles.all.each do |pb|
-
-      scores << pb.button_score
+      #setting the key to the pet id and the value to button score
+      scores[pb.pet_id] = pb.button_score
     end
     scores
   end
 
-  # def find_scores
-  #   scores = []
-  #   self.pet_battles.all.each do |pb|
-  #     scores << pb.button_score
-  #   end
-  #   scores
-  # end
 
   def pending_battle?
     scores = find_scores

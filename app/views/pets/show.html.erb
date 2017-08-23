@@ -44,7 +44,23 @@
 	    <a href="/pets" class="btn btn-primary">Back to Map</a>
 
 	    <h6><%= @pet.name %>'s Trophies</h6>
-	    <img src="https://media.giphy.com/media/rYS2QTtdJTL8s/giphy.gif" width="50" height="50">
+	    <% if @pet.win_count >= 2 && @pet.win_count < 6 %>
+	    	<img src="https://storageforbattlecats.s3.amazonaws.com/public/giphy.gif" class="trophy-items">
+	    	<img src="https://media.giphy.com/media/duCKgWY30q5pe/giphy.gif" class="trophy-items">
+	    <% elsif @pet.win_count  > 4 && @pet.win_count < 8 %>
+	    	<img src="https://media.giphy.com/media/duCKgWY30q5pe/giphy.gif" class="trophy-items">
+	    	<img src="https://media.giphy.com/media/HnmwXmKc4vzOg/giphy.gif" class="trophy-items">
+	    <% elsif @pet.win_count > 7 && @pet.win_count < 11 %>
+	    	<img src="https://media.giphy.com/media/duCKgWY30q5pe/giphy.gif" class="trophy-items">
+	    	<img src="https://media.giphy.com/media/HnmwXmKc4vzOg/giphy.gif" class="trophy-items">
+	    	<img src="https://media.giphy.com/media/EyYlQJKzQyg3S/giphy.gif" class="trophy-items">
+	    	<img src="https://media.giphy.com/media/2KWdyAGiaMVbi/giphy.gif" class="trophy-items">
+	    <% elsif @pet.win_count > 10 %>
+			<img src="https://media.giphy.com/media/oJj3CpDvP6Q3m/giphy.gif" class="trophy-items">
+		<% else %>
+			<img src="https://storageforbattlecats.s3.amazonaws.com/public/heart.gif" class="trophy-items">
+			<!-- <img src="https://media.giphy.com/media/oJj3CpDvP6Q3m/giphy.gif" class="trophy-items"> -->
+	    <% end %>
 	  </div>
 	</div>
 </div>
