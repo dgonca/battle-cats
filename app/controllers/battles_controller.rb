@@ -42,7 +42,6 @@ class BattlesController < ApplicationController
       @user = User.find(session[:user_id])
       @user_pets = @user.pets.all
       flash[:error] = "You must select one of your pets to battle with!"
-
       render 'new'
     else
       @battle = Battle.create()
@@ -69,10 +68,8 @@ class BattlesController < ApplicationController
 
     if @pet_battle_1.pet.owner_id == current_user.id
       @pet_battle_1.update_attributes(button_score: params[:score])
-      @battle.has_winner?
     else
       @pet_battle_2.update_attributes(button_score: params[:score])
-      @battle.has_winner?
     end
     respond_to do |format|
         format.html {render 'show'}

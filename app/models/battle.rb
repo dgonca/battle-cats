@@ -3,7 +3,6 @@ class Battle < ApplicationRecord
 	validates :pet_battles, length: {maximum: 2}
 
   def has_winner?
-
     if !is_tie? && set_winner != nil && set_loser != nil
       return true
     end
@@ -11,9 +10,11 @@ class Battle < ApplicationRecord
 
   def set_winner
     scores = find_scores
+
     if !pending_battle?
       winner_pet_pb = self.pet_battles[scores.find_index(scores.max)]
       winner_pet_pb.update_attributes(winner: true)
+     
       return winner_pet_pb
     end
   end
@@ -37,8 +38,10 @@ class Battle < ApplicationRecord
   def set_loser
     scores = find_scores
     if !pending_battle?
+
       loser_pet_pb = self.pet_battles[scores.find_index(scores.min)]
       loser_pet_pb.update_attributes(winner: false)
+
       return loser_pet_pb
     end
   end
@@ -53,7 +56,6 @@ class Battle < ApplicationRecord
   def find_scores
     scores = []
     self.pet_battles.all.each do |pb|
-
       scores << pb.button_score
     end
     scores
