@@ -10,7 +10,7 @@ RSpec.describe PetsController, type: :controller do
   let!(:user) {User.create!(email: "saham@att.net", password: "test")}
 
   let!(:pet) {Pet.create(name: "Zee", animal_type: "Zee", bio: "a cute Zee", zipcode: "60192", owner: user)}
-  let!(:pet_2) {Pet.create(name: "Puff", animal_type: "Cat", bio: "a cute Cat", zipcode: "60192", owner: user}
+  let!(:pet_2) {Pet.create(name: "Puff", animal_type: "Cat", bio: "a cute Cat", zipcode: "60192", owner: user)}
 
   # let!(:pet) {Pet.create(name: "Zee", animal_type: "Zee", bio: "a cute Zee", zipcode: "60192", owner: user)}
 
