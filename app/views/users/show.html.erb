@@ -14,30 +14,6 @@
 </ul>
 </div>
 
-
-
-<div class="completed-list stats-list">
-  <p class="h3">Completed Battles</p>
-  <% @user.pets.each do |pet| %>
-  <ul class="list-group">
-    <h6 class="list-headers"><%= pet.name %>'s Complete Battles</h6 class="list-headers">
-    <% pet.battles.each do |battle| %>
-      <% if !battle.pending_battle? %>
-        <% if battle.has_winner? %>
-        <% battle.set_winner %>
-        <li class="list-group-item"><%= battle.pet_battles[0].pet.name %> <%= battle.pet_battles[0].button_score %> vs <%= battle.pet_battles[1].pet.name %> <%= battle.pet_battles[1].button_score %>, <%= battle.created_at.strftime("%b %e, %l:%M %p") %>, winner = <strong>
-            <%= battle.winner.name %>
-            </strong></li>  
-        <% elsif battle.is_tie? %>
-        <li class="list-group-item"><%= battle.pet_battles[0].pet.name %> vs <%= battle.pet_battles[1].pet.name %>, <%= battle.updated_at.strftime("%b %e, %l:%M %p") %>, <%= battle.tie %></li>
-        <% end %>
-      <% end %>
-    <% end %>
-    </ul>
-  <% end %>
-</div>
-
-
 <div class="incomplete-list stats-list">
   <p class="h3">Incomplete Battles - Click to Join!</p>
   <% @user.pets.each do |pet| %>
@@ -51,6 +27,28 @@
     </ul>
   <% end %> 
 </div>
+
+<div class="completed-list stats-list">
+  <p class="h3">Completed Battles</p>
+  <% @user.pets.each do |pet| %>
+  <ul class="list-group">
+    <h6 class="list-headers"><%= pet.name %>'s Complete Battles</h6 class="list-headers">
+    <% pet.battles.each do |battle| %>
+      <% if !battle.pending_battle? %>
+        <% if battle.has_winner? %>
+        <% battle.set_winner %>
+        <li class="list-group-item"><%= battle.pet_battles[0].pet.name %> <%= battle.pet_battles[0].button_score %> vs <%= battle.pet_battles[1].pet.name %> <%= battle.pet_battles[1].button_score %>, winner = <strong>
+            <%= battle.winner.name %>
+            </strong></li>  
+        <% elsif battle.is_tie? %>
+        <li class="list-group-item"><%= battle.pet_battles[0].pet.name %> vs <%= battle.pet_battles[1].pet.name %>, <%= battle.updated_at.strftime("%b %e, %l:%M %p") %>, <%= battle.tie %></li>
+        <% end %>
+      <% end %>
+    <% end %>
+    </ul>
+  <% end %>
+</div>
+
 
 <div class="waiting-list stats-list">
   <p class="h3">Waiting...</p>

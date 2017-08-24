@@ -36,7 +36,7 @@ $("#fight-button").one("click", function(){
 
    };
 
-   setTimeout(hideSmashButton, 2000);
+   setTimeout(hideSmashButton, 4000);
    replaceFightButton(); 
    clickAccumulator();  
    });
