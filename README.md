@@ -10,38 +10,37 @@
  +##Installation##
  +To run the code on your local machine, Ruby, Rails, and the ImageMagick gem are required. 
  +  * Download, install, and verify that Ruby v2.2.2 or greater is installed. 
- +  ```
- +  $  brew install ruby
- +  ```
- +  ```
- +  $  ruby -v
- +     ruby 2.3.1p112
- +  ```
+ 
+ +  `$  brew install ruby`
+ +  
+ +  `$  ruby -v
+ +     ruby 2.3.1p112`
+ +  
  +  * Download and install Rails v5.0 
- +  ```
- +  $ gem install rails
- +  ```
+ +  
+ +  `$ gem install rails`
+ +  
  +  * Download imagemagick gem. 
- +  ```
- +  $ brew install imagemagick 
- +  ```
+ 
+ + ` $ brew install imagemagick `
+ + 
  +  * Clone the BattleCats repository to your local machine, navigate into its directory, 
- +  ```
- +  $ git clone 
- +  ```
+ 
+ + ` $ git clone ` 
+ 
  +  * Run 'bundle install'. 
- +  ```
- +  $ bundle install
- +  ```
+ +
+ + ` $ bundle install `
+ + 
  +  * Execute the command 'rails db:create' followed by 'rails db:migrate'.
- +  ```
- +  $ rails db:create
- +  $ rails db:migrate
- +  ```
+ + 
+ + ` $ rails db:create
+ +  $ rails db:migrate `
+ + 
  +  * Start a local server using the 'rails server' command
- +  ```
- +  $ rails server
- +  ```
+ +
+ + ` $ rails server `
+ +  
  +  * Navigate to 'localhost:3000'.
  +
  +The app can be accessed online at 'https://battle-cats-chicago.herokuapp.com/', or by clicking [here](https://battle-cats-chicago.herokuapp.com/).
