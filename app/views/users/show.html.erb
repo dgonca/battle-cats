@@ -47,7 +47,7 @@
             <%= battle.winner.name %>
             </strong></li>  
         <% elsif battle.is_tie? %>
-        <li class="list-group-item"><%= battle.pet_battles[0].pet.name %> vs <%= battle.pet_battles[1].pet.name %>, <%= battle.updated_at.strftime("%b %e, %l:%M %p") %>, <%= battle.tie %></li>
+        <li class="list-group-item"><%= battle.pet_battles[0].pet.name %> <%= battle.pet_battles[0].button_score %> vs <%= battle.pet_battles[1].pet.name %> <%= battle.pet_battles[1].button_score %>, <%= battle.tie %></li>
         <% end %>
       <% end %>
     <% end %>
