@@ -3,6 +3,10 @@
 </h1>
 
 <%= button_to "Create A New Pet", new_user_pet_path(@user), method: :get, :class => "btn btn-primary btn-lg new-pet-button" %>
+<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModal">
+          How to Play Battle Cats
+        </button>
+        <div class="buttons-div">
 <%= button_to 'Delete User', @user, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-warning btn-sm" %>
 
 <div class="pet-list stats-list">
@@ -64,6 +68,27 @@
     <% end %>
     </ul>
   <% end %>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Battle Cats Instructions:</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- <h2>Battle Instructions:</h2> -->
+        <p>How to Play BattleCats: First, create a pet. Next, navigate to the All Pets section. After reaching the all pets section, choose a pet to view. On that pet's viewing page, click vote to increase that pet's cuteness or click battle to battle that pet. If you click battle, choose a pet of your own pet to battle with. After choosing your pet, navigate to the battle screen. Click start to battle! For more information on how to battle, click instructions on the battle page.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
 </div>
 
 
