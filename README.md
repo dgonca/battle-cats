@@ -1,5 +1,7 @@
 #BattleCats
+
 ###Battle Cat Developers:
+
 * Brendan O'Handley - Team Lead - @bohandley 
 * Saham Khozestani - @sahamak
 * Dominique Goncalves - @dgonca
