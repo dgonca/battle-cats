@@ -54,7 +54,7 @@ To run the code on your local machine, Ruby, Rails, and the ImageMagick gem are 
  
  The app can be accessed online at 'https://battle-cats-chicago.herokuapp.com/' or by clicking [here](https://battle-cats-chicago.herokuapp.com/).
  
-##Instructions
+## Instructions
 
 ### General Use
 
