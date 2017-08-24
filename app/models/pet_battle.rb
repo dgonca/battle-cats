@@ -1,9 +1,9 @@
 class PetBattle < ApplicationRecord
 	belongs_to :pet
 	belongs_to :battle
-  # belongs_to :user, through: :pet, source: :owner
-
-  # def isWinner?
-  #   if
-  # end
+	after_destroy :destroy_battle
+  
+  	def destroy_battle
+  		self.battle.destroy
+  	end
 end

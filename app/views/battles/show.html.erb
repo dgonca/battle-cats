@@ -13,13 +13,13 @@
         </div>
 
         <div >
-          <img id="left-pet" class="avatar-img big-image" src=<%= @battle.pet_battles[0].pet.avatar.url(:medium) %>>
+          <img id="left-pet" class="avatar-img big-image" src=<%= @battle.pet_battles[0].pet.avatar.url(:square) %>>
           </div>
           <%= link_to "The Battle Is Over! Click Here", current_user, :id => "redirect-to-profile",
       :class => "game-over btn btn-warning action-buttons  hidden" %>
 
         <div >
-          <img id="right-pet" class="avatar-img big-image" src=<%= @battle.pet_battles[1].pet.avatar.url(:medium)%>>
+          <img id="right-pet" class="avatar-img big-image" src=<%= @battle.pet_battles[1].pet.avatar.url(:square)%>>
 
           </div>
           <div class="pet-show-card-body">
