@@ -1,6 +1,6 @@
-#BattleCats
+# Battle Cats
 
-###Battle Cat Developers:
+### Battle Cat Developers:
 
 * Brendan O'Handley - Team Lead - @bohandley 
 * Saham Khozestani - @sahamak
