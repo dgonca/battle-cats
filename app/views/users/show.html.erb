@@ -4,8 +4,10 @@
 
 <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModal">
           How to Play Battle Cats
-        </button>
-        <div class="buttons-div">
+</button>
+
+<br>
+
 <%= button_to 'Delete User', @user, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-warning btn-sm" %>
 <%= button_to "Create A New Pet", new_user_pet_path(@user), method: :get, :class => "btn btn-primary btn-lg new-pet-button" %>
 
