@@ -5,7 +5,7 @@ class PetsController < ApplicationController
 
 	def index
     authenticate!
-   	@pets = Pet.all
+   	@pets = Pet.all.order(created_at: :desc)
  	end
 
 	def show
